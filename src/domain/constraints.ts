@@ -23,6 +23,7 @@ export function findMissingConstraints(input: TripRequest): string[] {
   const missing: string[] = []
   if (!input.start.trim()) missing.push('出发地')
   if (!input.date.trim()) missing.push('出行日期')
+  if (!Number.isInteger(input.days) || input.days < 1 || input.days > 5) missing.push('行程天数（1–5 天）')
   if (input.adults + input.children + input.seniors <= 0) missing.push('同行人数')
   if (input.budget <= 0) missing.push('预算')
   if (input.preferences.length === 0) missing.push('旅行偏好')

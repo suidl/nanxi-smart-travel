@@ -25,7 +25,7 @@ describe('JourneyCockpit', () => {
     render(<JourneyCockpit plan={plan} onReplan={() => undefined} onRestart={() => undefined} onGenerateFromPrompt={async () => undefined} isPlanning={false} />)
 
     expect(screen.getByRole('heading', { name: '楠溪江山水人文一日线' })).toBeInTheDocument()
-    expect(screen.getByLabelText('路线示意图')).toBeInTheDocument()
+    expect(screen.getByLabelText('景点地理位置示意图，非道路导航')).toBeInTheDocument()
     expect(screen.getByLabelText('行程时间轴')).toBeInTheDocument()
     expect(screen.getAllByText(`¥${plan.budget.total}`)).toHaveLength(2)
     expect(screen.getAllByTestId('tool-trace')).toHaveLength(6)
@@ -53,5 +53,20 @@ describe('JourneyCockpit', () => {
 
     expect(selected).toMatchObject({ type: 'rain', demo: true, label: '午后阵雨' })
     expect(screen.queryByText('演示情境')).not.toBeInTheDocument()
+  })
+
+  it('passes the next stop to the closure scenario and scales the budget scenario', async () => {
+    const user = userEvent.setup()
+    const plan = await planTrip(request, { pois: POIS, weatherProvider: new DemoWeatherProvider() })
+    const selected: ReplanEvent[] = []
+    render(<JourneyCockpit plan={plan} onReplan={(event) => { selected.push(event) }} onRestart={() => undefined} onGenerateFromPrompt={async () => undefined} isPlanning={false} />)
+    await user.click(screen.getByRole('button', { name: '情况有变，重新规划' }))
+    await user.click(screen.getByRole('button', { name: '模拟景点关闭' }))
+    expect(selected.at(-1)).toMatchObject({ type: 'closure', affectedPoiId: plan.stops[1].poi.id, dayIndex: 1 })
+
+    await user.click(screen.getByRole('button', { name: '情况有变，重新规划' }))
+    await user.click(screen.getByRole('button', { name: '模拟预算变化' }))
+    expect(selected.at(-1)).toMatchObject({ type: 'budget', newBudget: 900 })
+    expect(screen.queryByRole('button', { name: '模拟道路拥堵' })).not.toBeInTheDocument()
   })
 })

@@ -45,4 +45,39 @@ describe('trip replanner', () => {
     expect(replanned.changeSummary?.reason).toContain('阵雨')
     expect(replanned.validationIssues).toEqual([])
   })
+
+  it('replans only the selected day of a multi-day itinerary', async () => {
+    const original = await planTrip({ ...request, days: 3, budget: 3600 }, {
+      pois: POIS,
+      weatherProvider: { getForecast: async (date) => ({ ...fairWeather, date }) },
+    })
+    const dayOneIds = original.stops.filter((stop) => stop.dayIndex === 1).map((stop) => stop.id)
+    const dayThreeIds = original.stops.filter((stop) => stop.dayIndex === 3).map((stop) => stop.id)
+    const dayTwoDate = original.stops.find((stop) => stop.dayIndex === 2)?.date
+    const replanned = await replanTrip(original, {
+      type: 'rain', label: '午后阵雨', dayIndex: 2,
+      currentTime: original.stops.find((stop) => stop.dayIndex === 2)!.endTime, demo: true,
+    }, { pois: POIS, weatherProvider: { getForecast: async (date) => ({ ...rainWeather, date }) } })
+
+    expect(replanned.stops.filter((stop) => stop.dayIndex === 1).map((stop) => stop.id)).toEqual(dayOneIds)
+    expect(replanned.stops.filter((stop) => stop.dayIndex === 3).map((stop) => stop.id)).toEqual(dayThreeIds)
+    expect(replanned.stops.filter((stop) => stop.dayIndex === 2).every((stop) => stop.date === dayTwoDate)).toBe(true)
+    expect(replanned.dailyWeather?.[1]).toMatchObject({ date: dayTwoDate, precipitationProbability: 90 })
+  })
+
+  it('removes a closed next stop and reduces the remaining schedule after fatigue', async () => {
+    const original = await planTrip(request, { pois: POIS, weatherProvider: { getForecast: async () => fairWeather } })
+    const firstEnd = original.stops[0].endTime
+    const closedId = original.stops[1].poi.id
+    const closure = await replanTrip(original, {
+      type: 'closure', label: '景点临时关闭', currentTime: firstEnd, affectedPoiId: closedId, demo: true,
+    }, { pois: POIS, weatherProvider: { getForecast: async () => fairWeather } })
+    expect(closure.stops.some((stop) => stop.poi.id === closedId)).toBe(false)
+
+    const fatigue = await replanTrip(original, {
+      type: 'fatigue', label: '老人感到疲劳', currentTime: firstEnd, demo: true,
+    }, { pois: POIS, weatherProvider: { getForecast: async () => fairWeather } })
+    expect(fatigue.stops.filter((stop) => !stop.completed).length).toBeLessThan(original.stops.length - 1)
+    expect(fatigue.stops.filter((stop) => !stop.completed).every((stop) => stop.poi.walkingLevel === 'low')).toBe(true)
+  })
 })

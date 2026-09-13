@@ -51,3 +51,34 @@ test('mobile cockpit fits a phone viewport without horizontal overflow', async (
   expect(hasHorizontalOverflow).toBe(false)
   await page.screenshot({ path: 'artifacts/ui/04-mobile-cockpit.png', fullPage: true })
 })
+
+test('inline AI changes the visible route and supports a custom five-day trip', async ({ page }) => {
+  await mkdir('artifacts/ui', { recursive: true })
+  await page.route('**/api/plan', async (route) => {
+    const request = route.request().postDataJSON()
+    const preferences = String(request.notes).includes('多看古村')
+      ? ['古村', '美食', '山水']
+      : request.preferences
+    await route.fulfill({ json: { request: { ...request, preferences }, source: 'ai', model: 'gpt-5.4-mini', summary: String(request.notes) } })
+  })
+  await page.route('**/api/weather?*', async (route) => {
+    const date = new URL(route.request().url()).searchParams.get('date')
+    await route.fulfill({ json: { date, temperatureMin: 20, temperatureMax: 28, precipitationProbability: 18, summary: '晴间多云', source: 'live', fetchedAt: new Date().toISOString() } })
+  })
+  await page.goto('/')
+  await page.getByRole('button', { name: '生成行程' }).click()
+  await expect(page.getByRole('heading', { name: '楠溪江山水人文一日线' })).toBeVisible()
+
+  await page.getByRole('textbox', { name: '告诉 AI 你的新想法' }).fill('多看古村少走路，安排永嘉小吃')
+  await page.getByRole('button', { name: '在本页重新生成' }).click()
+  await expect(page.getByRole('heading', { name: '永嘉麦饼体验' })).toBeVisible()
+  await expect(page.getByText(/新增 \d+ 个、移除 \d+ 个节点/)).toBeVisible()
+
+  await page.getByRole('textbox', { name: '告诉 AI 你的新想法' }).fill('楠溪江双人五日游，预算 6000')
+  await page.getByRole('button', { name: '在本页重新生成' }).click()
+  await expect(page.getByRole('button', { name: /第 5 天/ })).toBeVisible()
+  await page.getByRole('button', { name: /第 5 天/ }).click()
+  await expect(page.getByRole('heading', { name: '第 5 天行程' })).toBeVisible()
+  await expect(page.getByLabel('行程时间轴').locator('.itinerary-stop')).not.toHaveCount(0)
+  await page.screenshot({ path: 'artifacts/ui/05-five-day.png', fullPage: true })
+})

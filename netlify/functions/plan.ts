@@ -36,7 +36,7 @@ function isRequest(value: unknown): value is TripRequest {
   if (typeof value !== 'object' || value === null) return false
   const item = value as Partial<TripRequest>
   return typeof item.start === 'string' && typeof item.date === 'string'
-    && (item.days === 1 || item.days === 2)
+    && typeof item.days === 'number' && Number.isInteger(item.days) && item.days >= 1 && item.days <= 5
     && typeof item.adults === 'number' && typeof item.children === 'number' && typeof item.seniors === 'number'
     && typeof item.budget === 'number' && Array.isArray(item.preferences)
     && ['low', 'medium', 'high'].includes(item.walkingLevel ?? '')
@@ -74,7 +74,7 @@ const handler = createPlanHandler({
     const response = await client.responses.create({
       model: config.model,
       store: false,
-      instructions: '你是楠溪江行程约束解析器。只提炼用户偏好、步行强度、饮食需求并写一句摘要，不生成景点、价格、路线或未经提供的事实。',
+      instructions: '你是楠溪江行程约束解析器。只提炼用户偏好、步行强度、饮食需求并写一句摘要，不生成景点、价格、路线或未经提供的事实。preferences 只能从山水、古村、美食、亲子、文化中选择；“小吃”归为美食，“少走路”归为 low。优先理解 notes 中的新需求。',
       input: JSON.stringify(request),
       max_output_tokens: 500,
       text: {
@@ -85,7 +85,7 @@ const handler = createPlanHandler({
           schema: {
             type: 'object', additionalProperties: false,
             properties: {
-              preferences: { type: 'array', minItems: 1, maxItems: 5, items: { type: 'string' } },
+              preferences: { type: 'array', minItems: 1, maxItems: 5, items: { type: 'string', enum: ['山水', '古村', '美食', '亲子', '文化'] } },
               walkingLevel: { type: 'string', enum: ['low', 'medium', 'high'] },
               dietaryNeeds: { type: 'string' },
               summary: { type: 'string', maxLength: 80 },

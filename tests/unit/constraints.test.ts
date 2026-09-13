@@ -40,4 +40,13 @@ describe('trip request constraints', () => {
       dietaryNeeds: '',
     })).toEqual(['出发地', '出行日期', '同行人数', '预算', '旅行偏好'])
   })
+
+  it('accepts five days and rejects durations outside the supported range', () => {
+    const base = {
+      start: '温州南站', date: '2026-09-19', adults: 2, children: 0, seniors: 0,
+      budget: 6000, preferences: ['古村'], walkingLevel: 'low' as const, dietaryNeeds: '',
+    }
+    expect(findMissingConstraints({ ...base, days: 5 })).toEqual([])
+    expect(findMissingConstraints({ ...base, days: 6 })).toContain('行程天数（1–5 天）')
+  })
 })

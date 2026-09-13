@@ -15,13 +15,22 @@ export function estimateRoute(start: Poi, destinations: Poi[]): RouteEstimate {
   const remaining = [...destinations]
   const ordered: Poi[] = []
   let current = start
-  let straightLineKm = 0
 
   while (remaining.length > 0) {
     remaining.sort((a, b) => distanceKm(current, a) - distanceKm(current, b))
     const next = remaining.shift()!
-    straightLineKm += distanceKm(current, next)
     ordered.push(next)
+    current = next
+  }
+
+  return estimateOrderedRoute(start, ordered)
+}
+
+export function estimateOrderedRoute(start: Poi, ordered: Poi[]): RouteEstimate {
+  let current = start
+  let straightLineKm = 0
+  for (const next of ordered) {
+    straightLineKm += distanceKm(current, next)
     current = next
   }
 

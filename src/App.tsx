@@ -7,6 +7,7 @@ import { TripBuilder } from './components/TripBuilder'
 import { POIS } from './data/pois'
 import { DemoWeatherProvider } from './demo/demo-adapters'
 import type { PlanResult, ReplanEvent, TripRequest, WeatherSnapshot } from './domain/types'
+import { deriveRequestFromPrompt } from './domain/prompt-constraints'
 import { ApiWeatherProvider, ResilientWeatherProvider, interpretTripRequest, loadSharedTrip } from './services/api'
 import { loadSavedPlan, savePlan } from './services/storage'
 import './styles/app.css'
@@ -33,7 +34,7 @@ export function App() {
     if (plan) savePlan(plan)
   }, [plan])
 
-  async function createPlan(request: TripRequest) {
+  async function createPlan(request: TripRequest, previousPlan?: PlanResult) {
     setIsPlanning(true)
     try {
       let interpretedRequest = request
@@ -50,6 +51,20 @@ export function App() {
       }
       const weatherProvider = new ResilientWeatherProvider(new ApiWeatherProvider(), new DemoWeatherProvider())
       const result = await planTrip(interpretedRequest, { pois: POIS, weatherProvider, interpretation })
+      if (previousPlan) {
+        const oldIds = new Set(previousPlan.stops.map((stop) => stop.poi.id))
+        const newIds = new Set(result.stops.map((stop) => stop.poi.id))
+        const replacedPoiIds = [...oldIds].filter((id) => !newIds.has(id))
+        const addedPoiIds = [...newIds].filter((id) => !oldIds.has(id))
+        result.changeSummary = {
+          kind: 'ai',
+          reason: request.notes?.trim() || '根据新需求调整',
+          budgetDelta: result.budget.total - previousPlan.budget.total,
+          replacedPoiIds,
+          addedPoiIds,
+          previousDays: previousPlan.request.days,
+        }
+      }
       setPlan(result)
       setView('cockpit')
     } finally {
@@ -60,9 +75,9 @@ export function App() {
   async function handleReplan(event: ReplanEvent) {
     if (!plan) return
     const rainSnapshot: WeatherSnapshot = {
-      ...plan.weather,
-      precipitationProbability: event.type === 'rain' ? 90 : plan.weather.precipitationProbability,
-      summary: event.type === 'rain' ? '午后阵雨' : plan.weather.summary,
+      ...(plan.dailyWeather?.[event.dayIndex ? event.dayIndex - 1 : 0] ?? plan.weather),
+      precipitationProbability: event.type === 'rain' ? 90 : (plan.dailyWeather?.[event.dayIndex ? event.dayIndex - 1 : 0] ?? plan.weather).precipitationProbability,
+      summary: event.type === 'rain' ? '午后阵雨' : (plan.dailyWeather?.[event.dayIndex ? event.dayIndex - 1 : 0] ?? plan.weather).summary,
       source: 'demo',
       fetchedAt: new Date().toISOString(),
     }
@@ -75,7 +90,7 @@ export function App() {
 
   async function generateFromPrompt(prompt: string) {
     if (!plan) return
-    await createPlan({
+    await createPlan(deriveRequestFromPrompt({
       start: plan.request.start,
       date: plan.request.date,
       days: plan.request.days,
@@ -86,14 +101,13 @@ export function App() {
       preferences: plan.request.preferences,
       walkingLevel: plan.request.walkingLevel,
       dietaryNeeds: plan.request.dietaryNeeds.join('、'),
-      notes: prompt,
-    })
+    }, prompt), plan)
   }
 
   return (
     <AppShell active={view} onNavigate={(target) => setView(target === 'cockpit' && !plan ? 'create' : target)}>
       {view === 'create' || !plan
-        ? <TripBuilder onSubmit={createPlan} isPlanning={isPlanning} />
+        ? <TripBuilder onSubmit={(request) => createPlan(request)} isPlanning={isPlanning} />
         : <JourneyCockpit plan={plan} onReplan={handleReplan} onRestart={() => setView('create')} onGenerateFromPrompt={generateFromPrompt} isPlanning={isPlanning} />}
     </AppShell>
   )

@@ -12,8 +12,8 @@ export function buildCalendar(plan: PlanResult) {
   const events = plan.stops.map((stop) => [
     'BEGIN:VEVENT',
     `UID:${plan.id}-${stop.id}@nanxi-smart-travel`,
-    `DTSTART:${calendarTime(plan.request.date, stop.startTime)}`,
-    `DTEND:${calendarTime(plan.request.date, stop.endTime)}`,
+    `DTSTART:${calendarTime(stop.date ?? plan.request.date, stop.startTime)}`,
+    `DTEND:${calendarTime(stop.date ?? plan.request.date, stop.endTime)}`,
     `SUMMARY:${escapeCalendar(stop.poi.name)}`,
     `DESCRIPTION:${escapeCalendar(`${stop.note}；费用估算 ¥${stop.estimatedCost}；来源：${stop.poi.sourceUrl}`)}`,
     'END:VEVENT',
@@ -25,26 +25,32 @@ export function buildCalendar(plan: PlanResult) {
 export function buildExportLines(plan: PlanResult) {
   const lines = [
     '楠溪智游 · 行程驾驶舱',
-    `${plan.request.date}｜${plan.request.partySize} 人｜从 ${plan.request.start} 出发`,
+    `${plan.request.date} 起 ${plan.request.days} 天｜${plan.request.partySize} 人｜从 ${plan.request.start} 出发`,
     `预算 ¥${plan.budget.total} / ¥${plan.request.budget}｜预计路程 ${plan.route.totalDistanceKm} km`,
     `${plan.weather.source === 'demo' ? '演示天气' : '天气'}：${plan.weather.summary}，${plan.weather.temperatureMin}–${plan.weather.temperatureMax}℃`,
     '',
-    '今日行程',
   ]
 
   plan.stops.forEach((stop, index) => {
+    if (index === 0 || (stop.dayIndex ?? 1) !== (plan.stops[index - 1].dayIndex ?? 1)) {
+      lines.push('', plan.request.days === 1 ? '今日行程' : `第 ${stop.dayIndex ?? 1} 天 · ${stop.date ?? plan.request.date}`)
+    }
     lines.push(`${index + 1}. ${stop.startTime}–${stop.endTime}  ${stop.poi.name}`)
     lines.push(`   ${stop.note}｜费用估算 ¥${stop.estimatedCost}`)
   })
   lines.push('', `预算：交通 ${plan.budget.transport} / 门票 ${plan.budget.tickets} / 餐饮 ${plan.budget.food} / 预留 ${plan.budget.contingency}`)
-  lines.push('说明：路线距离为估算；票价、开放时间与天气请在出发前以官方实时信息为准。')
+  lines.push('说明：路线距离为估算；票价、开放时间与天气请在出发前以官方实时信息为准；未含住宿和返程交通。')
   if (plan.changeSummary) lines.push(`动态重排：${plan.changeSummary.reason}`)
   return lines
 }
 
 export function buildShareText(plan: PlanResult) {
-  const stops = plan.stops.map((stop) => `${stop.startTime} ${stop.poi.name}`).join(' → ')
-  return `【楠溪智游】${plan.request.date} 楠溪江一日行程\n${stops}\n预计路程 ${plan.route.totalDistanceKm} km，预算 ¥${plan.budget.total}。\n路线为估算，出发前请核验实时信息。`
+  const days = ['一', '二', '三', '四', '五']
+  const stops = Array.from({ length: plan.request.days }, (_, index) => {
+    const dailyStops = plan.stops.filter((stop) => (stop.dayIndex ?? 1) === index + 1)
+    return `${plan.request.days === 1 ? '' : `第 ${index + 1} 天：`}${dailyStops.map((stop) => `${stop.startTime} ${stop.poi.name}`).join(' → ')}`
+  }).join('\n')
+  return `【楠溪智游】${plan.request.date} 楠溪江${days[plan.request.days - 1] ?? plan.request.days}日行程\n${stops}\n预计路程 ${plan.route.totalDistanceKm} km，预算 ¥${plan.budget.total}。\n路线为估算，不含住宿和返程交通，出发前请核验实时信息。`
 }
 
 export function downloadCalendar(plan: PlanResult) {

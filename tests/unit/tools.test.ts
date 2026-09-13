@@ -68,6 +68,18 @@ describe('travel planning tools', () => {
     expect(budget.contingency).toBeGreaterThan(0)
   })
 
+  it('keeps a meal allowance for days without an explicit food stop', () => {
+    const foodPoi = POIS.find((poi) => poi.id === 'wheat-cake')!
+    const stops: ItineraryStop[] = [{
+      id: 'meal-day-1', dayIndex: 1, date: '2026-09-19', poi: foodPoi,
+      startTime: '12:00', endTime: '12:45', travelMinutes: 20,
+      estimatedCost: 20, completed: false, note: '',
+    }]
+    const budget = calculateBudget(normalizeTripRequest({ ...request, days: 2 }), stops)
+
+    expect(budget.food).toBe(400)
+  })
+
   it('reports opening-hour conflicts and walking-level mismatches', () => {
     const highWalkingPoi = POIS.find((poi) => poi.walkingLevel === 'high')!
     const stop: ItineraryStop = {
@@ -93,5 +105,21 @@ describe('travel planning tools', () => {
       'OPENING_HOURS_CONFLICT',
       'WALKING_LEVEL',
     ]))
+  })
+
+  it('checks each dated stop against its own daily weather', () => {
+    const outdoor = POIS.find((poi) => poi.id === 'taipingyan')!
+    const stops: ItineraryStop[] = [1, 2].map((dayIndex) => ({
+      id: `outdoor-${dayIndex}`, dayIndex, date: `2026-09-${18 + dayIndex}`,
+      poi: outdoor, startTime: '10:00', endTime: '11:30', travelMinutes: 20,
+      estimatedCost: 0, completed: false, note: '',
+    }))
+    const issues = validateItinerary(normalizeTripRequest({ ...request, days: 2 }), stops, [
+      { ...weather, date: '2026-09-19', precipitationProbability: 10 },
+      { ...weather, date: '2026-09-20', precipitationProbability: 90 },
+    ], { transport: 100, tickets: 0, food: 400, contingency: 50, total: 550 })
+
+    expect(issues.filter((issue) => issue.code === 'WEATHER_RISK').map((issue) => issue.poiId)).toEqual(['taipingyan'])
+    expect(issues.filter((issue) => issue.code === 'WEATHER_RISK')).toHaveLength(1)
   })
 })

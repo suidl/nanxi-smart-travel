@@ -11,7 +11,7 @@ export function PlanningTrace({ traces }: { traces: ToolTrace[] }) {
             <span className={`trace-icon ${trace.status}`}>
               {trace.status === 'success' ? <Check size={12} /> : trace.status === 'error' ? <CircleAlert size={12} /> : <LoaderCircle size={12} />}
             </span>
-            <div><strong>{trace.label}</strong><p>{trace.resultSummary}</p><span>{trace.durationMs} ms</span></div>
+            <div><strong>{trace.label}</strong><p>{trace.resultSummary}</p>{trace.durationMs !== undefined && <span>{trace.durationMs} ms</span>}</div>
           </article>
         ))}
       </div>

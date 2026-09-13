@@ -3,31 +3,31 @@ VERSION:2.0
 PRODID:-//楠溪智游//CN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-UID:trip-1789225040077-stop-1-taipingyan@nanxi-smart-travel
-DTSTART:20260919T092300
-DTEND:20260919T105300
+UID:trip-1789277861630-stop-1-1-taipingyan@nanxi-smart-travel
+DTSTART:20260919T092400
+DTEND:20260919T105400
 SUMMARY:太平岩
 DESCRIPTION:开放信息需出发前复核；费用估算 ¥0；来源：https://www.yj.gov.cn/module/download/downfile.jsp?classid=0&filename=5eedb8e860c24a0c964c41b82a33af3f.pdf
 END:VEVENT
 BEGIN:VEVENT
-UID:trip-1789225040077-stop-1-lishui@nanxi-smart-travel
-DTSTART:20260919T110900
-DTEND:20260919T123900
+UID:trip-1789277861630-stop-1-1-yongjia-academy@nanxi-smart-travel
+DTSTART:20260919T111100
+DTEND:20260919T131100
+SUMMARY:永嘉书院
+DESCRIPTION:开放信息已校验；费用估算 ¥35；来源：https://wl.wenzhou.gov.cn/art/2023/3/6/art_1642046_58903298.html
+END:VEVENT
+BEGIN:VEVENT
+UID:trip-1789277861630-stop-1-2-lishui@nanxi-smart-travel
+DTSTART:20260919T132800
+DTEND:20260919T145800
 SUMMARY:丽水古街
 DESCRIPTION:开放信息已校验；费用估算 ¥15；来源：https://wm.yj.gov.cn/art/2020/4/13/art_1352398_42561609.html
 END:VEVENT
 BEGIN:VEVENT
-UID:trip-1789225040077-stop-2-yantou@nanxi-smart-travel
-DTSTART:20260919T125500
-DTEND:20260919T135500
+UID:trip-1789277861630-stop-1-3-yantou@nanxi-smart-travel
+DTSTART:20260919T151500
+DTEND:20260919T161500
 SUMMARY:岩头镇
 DESCRIPTION:开放信息需出发前复核；费用估算 ¥0；来源：https://www.yj.gov.cn/module/download/downfile.jsp?classid=0&filename=5eedb8e860c24a0c964c41b82a33af3f.pdf
-END:VEVENT
-BEGIN:VEVENT
-UID:trip-1789225040077-stop-3-cangpo@nanxi-smart-travel
-DTSTART:20260919T141100
-DTEND:20260919T154100
-SUMMARY:苍坡古村
-DESCRIPTION:开放信息已校验；费用估算 ¥10；来源：https://wl.wenzhou.gov.cn/art/2023/3/6/art_1642046_58903298.html
 END:VEVENT
 END:VCALENDAR

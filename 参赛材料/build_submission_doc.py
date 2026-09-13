@@ -14,8 +14,8 @@ from docx.shared import Cm, Pt, RGBColor
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "参赛申报书-v2.md"
-OUTPUT = ROOT / "楠溪智游-参赛申报书-v2.docx"
-SKILL_SCRIPTS = Path(r"C:\Users\PC\.codex\plugins\cache\openai-primary-runtime\documents\26.819.11345\skills\documents\scripts")
+OUTPUT = ROOT / "楠溪智游-参赛申报书-v3.docx"
+SKILL_SCRIPTS = Path(r"C:\Users\PC\.codex\plugins\cache\openai-primary-runtime\documents\26.909.22227\skills\documents\scripts")
 sys.path.insert(0, str(SKILL_SCRIPTS))
 from table_geometry import apply_table_geometry, column_widths_from_weights, section_content_width_dxa  # noqa: E402
 
@@ -185,9 +185,9 @@ normal.paragraph_format.line_spacing = 1.25
 normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
 for name, size, color, before, after in [
-    ("Heading 1", 16, BLUE, 16, 8),
-    ("Heading 2", 13, BLUE, 12, 6),
-    ("Heading 3", 12, DARK, 8, 4),
+    ("Heading 1", 16, RGBColor(0, 0, 0), 16, 8),
+    ("Heading 2", 13, RGBColor(0, 0, 0), 12, 6),
+    ("Heading 3", 12, RGBColor(0, 0, 0), 8, 4),
 ]:
     style = doc.styles[name]
     set_font(style, size, color, True)
@@ -234,13 +234,15 @@ r.font.bold = True
 r.font.color.rgb = MUTED
 
 p = doc.add_paragraph()
+p.style = doc.styles["Title"]
+set_font(doc.styles["Title"], 24, RGBColor(0, 0, 0), True)
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p.paragraph_format.space_after = Pt(12)
 r = p.add_run(title)
 r.font.name = FONT
 r.font.size = Pt(24)
 r.font.bold = True
-r.font.color.rgb = RGBColor(20, 38, 58)
+r.font.color.rgb = RGBColor(0, 0, 0)
 
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -294,7 +296,7 @@ while i < len(lines):
     doc.add_paragraph(clean_inline(line))
     i += 1
 
-doc.core_properties.title = "楠溪智游——楠溪江动态行程决策智能体 参赛申报书"
+doc.core_properties.title = "楠溪智游 楠溪江动态行程决策智能体参赛申报书"
 doc.core_properties.subject = "2026 首届永嘉农商杯 AI＋OPC 创新创业大赛"
 doc.core_properties.author = ""
 doc.save(OUTPUT)

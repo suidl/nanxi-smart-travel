@@ -4,7 +4,7 @@ export type WeatherSuitability = 'outdoor' | 'indoor' | 'all-weather'
 export interface TripRequest {
   start: string
   date: string
-  days: 1 | 2
+  days: number
   adults: number
   children: number
   seniors: number
@@ -63,11 +63,13 @@ export interface ToolTrace {
   inputSummary: string
   resultSummary: string
   status: 'pending' | 'running' | 'success' | 'error'
-  durationMs: number
+  durationMs?: number
 }
 
 export interface ItineraryStop {
   id: string
+  dayIndex?: number
+  date?: string
   poi: Poi
   startTime: string
   endTime: string
@@ -102,6 +104,7 @@ export interface PlanResult {
   id: string
   request: NormalizedTripRequest
   weather: WeatherSnapshot
+  dailyWeather?: WeatherSnapshot[]
   stops: ItineraryStop[]
   route: RouteEstimate
   budget: BudgetBreakdown
@@ -114,13 +117,17 @@ export interface PlanResult {
     summary: string
   }
   changeSummary?: {
+    kind?: 'ai' | 'scenario'
     reason: string
     budgetDelta: number
     replacedPoiIds: string[]
+    addedPoiIds?: string[]
+    previousDays?: number
   }
 }
 
 export interface ReplanEvent {
+  dayIndex?: number
   type: 'rain' | 'closure' | 'traffic' | 'fatigue' | 'budget'
   label: string
   currentTime: string

@@ -61,6 +61,13 @@ fieldset legend { margin-bottom: 8px; color: var(--muted); font-size: 12px; font
 .source-badge.ai { color: var(--green-800); background: var(--green-100); }
 .icon-action { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 10px; color: var(--green-800); background: var(--paper); }
 .change-banner { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; padding: 12px 14px; border: 1px solid #f0d39e; border-radius: 11px; color: #7c501b; background: var(--warm-soft); font-size: 12px; }
+.change-banner strong { max-width: 55%; overflow-wrap: anywhere; }
+.day-tabs { display: flex; gap: 8px; margin: 0 0 14px; padding-bottom: 4px; overflow-x: auto; }
+.day-tabs button { flex: 0 0 auto; padding: 9px 12px; border: 1px solid var(--line); border-radius: 9px; color: var(--green-800); background: var(--paper); font-size: 12px; font-weight: 650; cursor: pointer; }
+.day-tabs button.active { border-color: var(--green-700); color: white; background: var(--green-800); }
+.risk-panel { margin: 0 0 20px; padding: 12px 15px; border: 1px solid #edc888; border-radius: 11px; color: #81500e; background: var(--warm-soft); font-size: 12px; }
+.risk-panel ul { margin: 6px 0 0; padding-left: 20px; line-height: 1.6; }
+.budget-note { margin: 8px 0 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
 .ai-planner { display: grid; grid-template-columns: minmax(190px, .8fr) minmax(260px, 1.2fr); gap: 18px; align-items: center; margin-bottom: 18px; padding: 18px 20px; border: 1px solid #b9d7bf; border-radius: 16px; background: linear-gradient(110deg, #eef7ed, #fffdfa); }
 .ai-planner h2 { margin: 4px 0; color: var(--green-950); font-size: 17px; }
 .ai-planner p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
@@ -77,7 +84,10 @@ fieldset legend { margin-bottom: 8px; color: var(--muted); font-size: 12px; font
 .terrain-a { width: 55%; height: 120%; left: -12%; top: -30%; }
 .terrain-b { width: 48%; height: 110%; right: -9%; bottom: -36%; }
 .map-stop { position: absolute; z-index: 2; display: grid; place-items: center; width: 27px; height: 27px; transform: translate(-50%, -50%); border: 5px solid white; border-radius: 50%; color: white; background: var(--green-800); box-shadow: 0 3px 10px rgba(33, 69, 42, .25); font-size: 9px; }
-.map-stop span { position: absolute; top: 27px; width: max-content; max-width: 110px; padding: 3px 6px; border-radius: 5px; color: var(--ink); background: rgba(255,255,255,.88); font-size: 10px; font-weight: 700; }
+.map-stop span { position: absolute; top: 27px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 110px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 3px 6px; border-radius: 5px; color: var(--ink); background: rgba(255,255,255,.88); font-size: 10px; font-weight: 700; }
+.map-stop.bottom span { top: auto; bottom: 27px; }
+.map-stop.edge-right span { right: -4px; left: auto; transform: none; }
+.map-stop.edge-left span { left: -4px; transform: none; }
 .estimate-label { position: absolute; right: 12px; bottom: 10px; padding: 4px 7px; border-radius: 6px; color: var(--muted); background: rgba(255,255,255,.82); font-size: 9px; }
 .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); margin: 14px 0 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
 .metric-row > div { padding: 14px 16px; border-right: 1px solid var(--line); }
@@ -135,6 +145,8 @@ fieldset legend { margin-bottom: 8px; color: var(--muted); font-size: 12px; font
 }
 
 @media (max-width: 780px) {
+  .change-banner { flex-direction: column; align-items: flex-start; }
+  .change-banner strong { max-width: none; }
   .topbar { height: 58px; padding: 0 16px; }
   .topbar-meta { display: none; }
   .app-frame { display: block; }

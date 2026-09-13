@@ -36,4 +36,15 @@ describe('AI interpretation guardrails', () => {
     expect(result.request.dietaryNeeds).toBe('')
     expect(result.summary).toContain('山水')
   })
+
+  it('turns free-form model phrases into supported priorities instead of inert tags', () => {
+    const result = mergeModelInterpretation({ ...input, preferences: ['山水', '古村'], notes: '多看古村少走路，永嘉小吃' }, {
+      preferences: ['山水', '古村', '节奏轻松', '多看古村 少走路', '永嘉小吃'],
+      walkingLevel: 'medium', dietaryNeeds: '希望午餐尝试永嘉小吃',
+      summary: '多看古村，少走路，尝试本地小吃',
+    })
+
+    expect(result.request.preferences).toEqual(['古村', '美食', '山水'])
+    expect(result.request.walkingLevel).toBe('low')
+  })
 })

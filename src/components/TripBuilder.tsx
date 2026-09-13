@@ -60,7 +60,7 @@ export function TripBuilder({ onSubmit, isPlanning }: TripBuilderProps) {
         <label className="field full"><span><MapPin size={15} /> 出发地</span><input value={request.start} onChange={(event) => update('start', event.target.value)} /></label>
         <div className="field-grid">
           <label className="field"><span><CalendarDays size={15} /> 出行日期</span><input type="date" value={request.date} onChange={(event) => update('date', event.target.value)} /></label>
-          <label className="field"><span>行程天数</span><select value={request.days} onChange={(event) => update('days', Number(event.target.value) as 1 | 2)}><option value="1">1 天</option><option value="2">2 天</option></select></label>
+          <label className="field"><span>行程天数 · 1–5 天</span><input aria-label="行程天数" type="number" min="1" max="5" step="1" value={request.days} onChange={(event) => update('days', Number(event.target.value))} /></label>
         </div>
 
         <fieldset className="people-field"><legend><Users size={15} /> 同行人员</legend><div className="counter-grid">

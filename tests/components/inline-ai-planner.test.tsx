@@ -14,10 +14,14 @@ function stubOnlinePlanning(requests: Array<Record<string, unknown>>) {
     if (String(input) === '/api/plan') {
       const request = JSON.parse(String(init?.body)) as Record<string, unknown>
       requests.push(request)
-      return new Response(JSON.stringify({ request, source: 'ai', model: 'gpt-5.4-mini', summary: String(request.notes) }), { status: 200 })
+      const wantsVillageAndFood = String(request.notes).includes('想多看古村')
+      const interpreted = wantsVillageAndFood
+        ? { ...request, preferences: ['古村', '美食', '山水'], walkingLevel: 'low' }
+        : request
+      return new Response(JSON.stringify({ request: interpreted, source: 'ai', model: 'gpt-5.4-mini', summary: String(request.notes) }), { status: 200 })
     }
     if (String(input).startsWith('/api/weather?')) return new Response(JSON.stringify({
-      date: '2026-09-19', temperatureMin: 20, temperatureMax: 28,
+      date: new URL(String(input), 'http://localhost').searchParams.get('date'), temperatureMin: 20, temperatureMax: 28,
       precipitationProbability: 18, summary: '晴间多云', source: 'live',
       fetchedAt: '2026-09-12T12:00:00.000Z',
     }), { status: 200 })
@@ -42,11 +46,14 @@ describe('in-page AI planning', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('行程已在本页重新核算')
     expect(within(screen.getByLabelText('Agent 执行轨迹')).getByText('想多看古村，少走路，安排永嘉小吃')).toBeInTheDocument()
     expect(requests.at(-1)?.notes).toBe('想多看古村，少走路，安排永嘉小吃')
+    expect(screen.getByRole('heading', { name: '永嘉麦饼体验' })).toBeInTheDocument()
+    expect(screen.getByText(/新增 \d+ 个、移除 \d+ 个节点/)).toBeInTheDocument()
     expect(window.location.href).toBe(originalUrl)
   })
 
-  it('does not silently turn a five-day request into a one-day itinerary', async () => {
-    stubOnlinePlanning([])
+  it('turns a two-person five-day prompt into five selectable daily itineraries', async () => {
+    const requests: Array<Record<string, unknown>> = []
+    stubOnlinePlanning(requests)
     const user = userEvent.setup()
     render(<App />)
     await user.click(screen.getByRole('button', { name: '生成行程' }))
@@ -55,6 +62,22 @@ describe('in-page AI planning', () => {
     await user.type(screen.getByRole('textbox', { name: '告诉 AI 你的新想法' }), '给我规划一个楠溪江双人五日游')
     await user.click(screen.getByRole('button', { name: '在本页重新生成' }))
 
-    expect(screen.getByRole('alert')).toHaveTextContent('目前只支持单日行程')
+    expect(await screen.findByRole('button', { name: /第 5 天/ })).toBeInTheDocument()
+    expect(requests.at(-1)).toMatchObject({ days: 5, adults: 2, children: 0, seniors: 0, budget: 6000 })
+    await user.click(screen.getByRole('button', { name: /第 5 天/ }))
+    expect(screen.getByRole('heading', { name: '第 5 天行程' })).toBeInTheDocument()
+  })
+
+  it('still changes the route for common requests when AI Gateway is unavailable', async () => {
+    vi.stubGlobal('fetch', async () => new Response(JSON.stringify({ error: { code: 'OFFLINE' } }), { status: 503 }))
+    const user = userEvent.setup()
+    render(<App />)
+    await user.click(screen.getByRole('button', { name: '生成行程' }))
+    await screen.findByText('规则演示解析')
+
+    await user.type(screen.getByRole('textbox', { name: '告诉 AI 你的新想法' }), '多看古村少走路，安排永嘉小吃')
+    await user.click(screen.getByRole('button', { name: '在本页重新生成' }))
+    expect(await screen.findByRole('heading', { name: '永嘉麦饼体验' })).toBeInTheDocument()
+    expect(screen.getByText(/规则重生成结果/)).toBeInTheDocument()
   })
 })

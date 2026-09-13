@@ -36,6 +36,18 @@ describe('trip exports', () => {
     expect(shareText).toContain(`预算 ¥${plan.budget.total}`)
   })
 
+  it('exports all five dates rather than putting every stop on the first day', async () => {
+    const plan = await makePlan()
+    const multiDay = await planTrip({ ...plan.request, days: 5, budget: 6000, dietaryNeeds: '' }, {
+      pois: POIS, weatherProvider: new DemoWeatherProvider(),
+    })
+    const calendar = buildCalendar(multiDay)
+    const lines = buildExportLines(multiDay).join('\n')
+    expect(calendar).toContain('DTSTART:20260923T')
+    expect(lines).toContain('第 5 天')
+    expect(buildShareText(multiDay)).toContain('五日行程')
+  })
+
   it('falls back to legacy copy when clipboard permission is denied', async () => {
     const plan = await makePlan()
     Object.defineProperty(navigator, 'clipboard', {

@@ -54,7 +54,7 @@ function isTripRequest(value: unknown): value is TripRequest {
   const candidate = value as Partial<TripRequest>
   return typeof candidate.start === 'string'
     && typeof candidate.date === 'string'
-    && (candidate.days === 1 || candidate.days === 2)
+    && typeof candidate.days === 'number' && Number.isInteger(candidate.days) && candidate.days >= 1 && candidate.days <= 5
     && typeof candidate.adults === 'number'
     && typeof candidate.children === 'number'
     && typeof candidate.seniors === 'number'

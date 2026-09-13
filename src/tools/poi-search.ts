@@ -14,7 +14,8 @@ export function searchPois(
     .filter((item) => request.seniors === 0 || item.seniorFriendly)
     .filter((item) => request.children === 0 || item.childFriendly)
     .map((item) => {
-      const preferenceScore = request.preferences.filter((preference) => item.tags.includes(preference)).length * 4
+      const preferenceScore = request.preferences.reduce((score, preference, index) =>
+        score + (item.tags.includes(preference) ? (index === 0 ? 8 : 4) : 0), 0)
       const weatherScore = rainy
         ? item.weatherSuitability === 'indoor' ? 4 : item.weatherSuitability === 'all-weather' ? 3 : 0
         : item.weatherSuitability === 'outdoor' ? 2 : 1
