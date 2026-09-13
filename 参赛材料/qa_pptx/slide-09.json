@@ -1,0 +1,360 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/7p6u5d",
+    "id": "7p6u5d",
+    "slide": 9,
+    "layoutId": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3mh8natw",
+      "id": "1",
+      "name": "收束",
+      "bbox": [
+        60,
+        150,
+        1140,
+        185
+      ],
+      "geometry": "rect",
+      "text": "让楠溪江行程，真正跟得上变化。",
+      "textPreview": "让楠溪江行程，真正跟得上变化。",
+      "resolvedFontSize": 52,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 52,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "让楠溪江行程，真正跟得上变化。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "让楠溪江行程，真正跟得上变化。",
+          "resolvedTextStyle": {
+            "fontSize": 52,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "让楠溪江行程，真正跟得上变化。",
+              "fontSize": 52,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/onq9gfah",
+      "id": "2",
+      "name": "分隔线",
+      "bbox": [
+        60,
+        396,
+        1120,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#277A56",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pozqpkb2",
+      "id": "3",
+      "name": "呼吁",
+      "bbox": [
+        60,
+        431,
+        1090,
+        90
+      ],
+      "geometry": "rect",
+      "text": "寻找真实游客与文旅场景试点，验证行程可执行性。",
+      "textPreview": "寻找真实游客与文旅场景试点，验证行程可执行性。",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 29,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "寻找真实游客与文旅场景试点，验证行程可执行性。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "寻找真实游客与文旅场景试点，验证行程可执行性。",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "寻找真实游客与文旅场景试点，验证行程可执行性。",
+              "fontSize": 29,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ehoralsf",
+      "id": "4",
+      "name": "网址",
+      "bbox": [
+        60,
+        585,
+        900,
+        54
+      ],
+      "geometry": "rect",
+      "text": "nanxi-smart-travel.netlify.app",
+      "textPreview": "nanxi-smart-travel.netlify.app",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 30,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "nanxi-smart-travel.netlify.app"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "nanxi-smart-travel.netlify.app",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "nanxi-smart-travel.netlify.app",
+              "fontSize": 30,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fix8jqt0",
+      "id": "5",
+      "name": "赛道",
+      "bbox": [
+        60,
+        650,
+        600,
+        30
+      ],
+      "geometry": "rect",
+      "text": "赛道一 · 命题二 · 楠溪智游",
+      "textPreview": "赛道一 · 命题二 · 楠溪智游",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "赛道一 · 命题二 · 楠溪智游"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "赛道一 · 命题二 · 楠溪智游",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "赛道一 · 命题二 · 楠溪智游",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

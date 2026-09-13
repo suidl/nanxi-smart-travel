@@ -1,0 +1,25 @@
+:root {
+  font-family: Inter, "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  color: #1d2f22;
+  background: #edf2ec;
+  font-synthesis: none;
+  --green-950: #143a22;
+  --green-800: #1e5b34;
+  --green-700: #286f40;
+  --green-100: #e6f0e7;
+  --paper: #fbfcf8;
+  --white: #ffffff;
+  --ink: #1d2f22;
+  --muted: #6f7d72;
+  --line: #dce5dc;
+  --warm: #e89b3f;
+  --warm-soft: #fff3dc;
+  --danger: #a84d3e;
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #edf2ec; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid rgba(40, 111, 64, .28); outline-offset: 2px; }

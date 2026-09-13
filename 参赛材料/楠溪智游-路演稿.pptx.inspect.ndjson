@@ -1,0 +1,133 @@
+{"kind":"deck","id":"pr/cx314u","name":"Deck"}
+{"kind":"layout","layoutId":"f2b18306-d4d5-45bb-bfff-3d3a19494b02","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"9d5db0c0-38da-4f4d-88b3-16ef9100229f","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/cbwb7r","slide":1,"title":"2026 首届“永嘉农商杯”AI＋OPC 创新创业大赛","textShapes":5}
+{"kind":"textbox","id":"sh/tcv2xcvm","slide":1,"name":"赛事","text":"2026 首届“永嘉农商杯”AI＋OPC 创新创业大赛","textPreview":"2026 首届“永嘉农商杯”AI＋OPC 创新创业大赛","textChars":27,"textLines":1,"bbox":[60,34,1030,36]}
+{"kind":"textbox","id":"sh/69k3mxwv","slide":1,"name":"主标题","text":"楠溪智游","textPreview":"楠溪智游","textChars":4,"textLines":1,"bbox":[60,168,550,96]}
+{"kind":"textbox","id":"sh/7atkv2dg","slide":1,"name":"副标题","text":"楠溪江动态行程\n决策智能体","textPreview":"楠溪江动态行程 | 决策智能体","textChars":13,"textLines":2,"bbox":[60,285,560,150]}
+{"kind":"textbox","id":"sh/gfmls7ed","slide":1,"name":"一句话","text":"让一条行程能规划、能检查，也能随变化继续走下去。","textPreview":"让一条行程能规划、能检查，也能随变化继续走下去。","textChars":24,"textLines":1,"bbox":[60,495,500,95]}
+{"kind":"textbox","id":"sh/hgvm1cvi","slide":1,"name":"赛道","text":"赛道一 · AI Agent × 永嘉特色产业 · 文旅智能导览","textPreview":"赛道一 · AI Agent × 永嘉特色产业 · 文旅智能导览","textChars":32,"textLines":1,"bbox":[60,635,1050,30]}
+{"kind":"image","id":"im/3qhsfapk","slide":1,"name":"","alt":"楠溪智游创建行程页","bbox":[665,113,555,480]}
+{"kind":"notes","id":"nt/cbwb7r","slide":1,"text":"开场：家庭游客面对的不只是选景点，而是多条件下持续做决定。\n\n[Sources]\n大赛赛道说明：https://www.kdocs.cn/l/crAjwHTDW2VE\n产品截图：本项目 artifacts/ui/01-builder.png（演示版界面）\n[/Sources]"}
+{"kind":"slide","id":"sl/44u8es","slide":2,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":7}
+{"kind":"textbox","id":"sh/psfat0ny","slide":2,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
+{"kind":"textbox","id":"sh/2p4ryl47","slide":2,"name":"页码","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
+{"kind":"textbox","id":"sh/nqdsrq5s","slide":2,"name":"标题","text":"问题不是缺少景点，而是缺少可执行的决策","textPreview":"问题不是缺少景点，而是缺少可执行的决策","textChars":19,"textLines":1,"bbox":[60,85,1160,92]}
+{"kind":"shape","id":"sh/0nm9wbm1","slide":2,"name":"分隔线","bbox":[60,181,1160,2]}
+{"kind":"textbox","id":"sh/1ovapgnm","slide":2,"name":"大观点","text":"老人儿童体力、天气、路程、预算，必须一起算。","textPreview":"老人儿童体力、天气、路程、预算，必须一起算。","textChars":22,"textLines":1,"bbox":[60,235,1080,155]}
+{"kind":"textbox","id":"sh/el4rul4v","slide":2,"name":"问题一","text":"出发前：信息分散，路线容易折返。","textPreview":"出发前：信息分散，路线容易折返。","textChars":16,"textLines":1,"bbox":[60,455,570,48]}
+{"kind":"textbox","id":"sh/fmdsnq5g","slide":2,"name":"问题二","text":"出发后：下雨或闭园，整条计划被打乱。","textPreview":"出发后：下雨或闭园，整条计划被打乱。","textChars":18,"textLines":1,"bbox":[60,515,740,48]}
+{"kind":"textbox","id":"sh/kjq98fml","slide":2,"name":"问题性质","text":"目标用户与痛点为产品假设，等待真实游客试点验证。","textPreview":"目标用户与痛点为产品假设，等待真实游客试点验证。","textChars":24,"textLines":1,"bbox":[60,640,940,28]}
+{"kind":"notes","id":"nt/44u8es","slide":2,"text":"这一页强调需求假设，不宣称已经做了正式市场调研。\n\n[Sources]\n大赛赛道说明文旅智能导览方向：https://www.kdocs.cn/l/crAjwHTDW2VE\n产品假设：本项目参赛申报书第二节\n[/Sources]"}
+{"kind":"slide","id":"sl/16l115","slide":3,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":21}
+{"kind":"textbox","id":"sh/0budcrq5","slide":3,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
+{"kind":"textbox","id":"sh/zalw3m9k","slide":3,"name":"页码","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
+{"kind":"textbox","id":"sh/epsvah8z","slide":3,"name":"标题","text":"Agent 不写一段建议，而是完成六步工具闭环","textPreview":"Agent 不写一段建议，而是完成六步工具闭环","textChars":23,"textLines":1,"bbox":[60,85,1160,92]}
+{"kind":"shape","id":"sh/doje1cre","slide":3,"name":"分隔线","bbox":[60,181,1160,2]}
+{"kind":"textbox","id":"sh/cnad87q9","slide":3,"name":"序号0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[60,230,75,45]}
+{"kind":"textbox","id":"sh/rm1wzm9o","slide":3,"name":"步骤0","text":"理解约束","textPreview":"理解约束","textChars":4,"textLines":1,"bbox":[135,230,270,45]}
+{"kind":"shape","id":"sh/qlsv6h83","slide":3,"name":"分隔线","bbox":[60,286,340,2]}
+{"kind":"textbox","id":"sh/pkjexcri","slide":3,"name":"说明0","text":"AI 解析偏好与步行强度","textPreview":"AI 解析偏好与步行强度","textChars":12,"textLines":1,"bbox":[60,299,345,70]}
+{"kind":"textbox","id":"sh/4jad47qx","slide":3,"name":"序号1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[458,230,75,45]}
+{"kind":"textbox","id":"sh/6xor2tsn","slide":3,"name":"步骤1","text":"查询天气","textPreview":"查询天气","textChars":4,"textLines":1,"bbox":[533,230,270,45]}
+{"kind":"shape","id":"sh/7yxsbyt8","slide":3,"name":"分隔线","bbox":[458,286,340,2]}
+{"kind":"textbox","id":"sh/sz6943at","slide":3,"name":"说明1","text":"实时天气；失败时明示回退","textPreview":"实时天气；失败时明示回退","textChars":12,"textLines":1,"bbox":[458,299,345,70]}
+{"kind":"textbox","id":"sh/tkfad8be","slide":3,"name":"序号2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[856,230,75,45]}
+{"kind":"textbox","id":"sh/it4rytsr","slide":3,"name":"步骤2","text":"筛选景点","textPreview":"筛选景点","textChars":4,"textLines":1,"bbox":[931,230,270,45]}
+{"kind":"shape","id":"sh/juds7ytc","slide":3,"name":"分隔线","bbox":[856,286,340,2]}
+{"kind":"textbox","id":"sh/kv6903ah","slide":3,"name":"说明2","text":"永嘉点位库和适宜性过滤","textPreview":"永嘉点位库和适宜性过滤","textChars":11,"textLines":1,"bbox":[856,299,345,70]}
+{"kind":"textbox","id":"sh/5wfa98b2","slide":3,"name":"序号3","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[60,405,75,45]}
+{"kind":"textbox","id":"sh/ap4ru9sf","slide":3,"name":"步骤3","text":"估算路线","textPreview":"估算路线","textChars":4,"textLines":1,"bbox":[135,405,270,45]}
+{"kind":"shape","id":"sh/vqds3et0","slide":3,"name":"分隔线","bbox":[60,461,340,2]}
+{"kind":"textbox","id":"sh/zypgfq5g","slide":3,"name":"说明3","text":"按坐标估算顺序与距离","textPreview":"按坐标估算顺序与距离","textChars":10,"textLines":1,"bbox":[60,474,345,70]}
+{"kind":"textbox","id":"sh/exgfml4v","slide":3,"name":"序号4","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[458,405,75,45]}
+{"kind":"textbox","id":"sh/1kryh0nm","slide":3,"name":"步骤4","text":"核算预算","textPreview":"核算预算","textChars":4,"textLines":1,"bbox":[533,405,270,45]}
+{"kind":"shape","id":"sh/0zixovm1","slide":3,"name":"分隔线","bbox":[458,461,340,2]}
+{"kind":"textbox","id":"sh/nm9gjq5s","slide":3,"name":"说明4","text":"按同行人和节点费用计算","textPreview":"按同行人和节点费用计算","textChars":11,"textLines":1,"bbox":[458,474,345,70]}
+{"kind":"textbox","id":"sh/ml0fql47","slide":3,"name":"序号5","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[856,405,75,45]}
+{"kind":"textbox","id":"sh/9oryl0ni","slide":3,"name":"步骤5","text":"检查风险","textPreview":"检查风险","textChars":4,"textLines":1,"bbox":[931,405,270,45]}
+{"kind":"shape","id":"sh/onihsvmd","slide":3,"name":"分隔线","bbox":[856,461,340,2]}
+{"kind":"textbox","id":"sh/3q5g7658","slide":3,"name":"说明5","text":"开放、天气、体力与预算","textPreview":"开放、天气、体力与预算","textChars":11,"textLines":1,"bbox":[856,474,345,70]}
+{"kind":"notes","id":"nt/16l115","slide":3,"text":"模型负责需求解析；预算、路线、检查由工具和规则完成。工具轨迹中的展示耗时尚非生产级真实性能计量。\n\n[Sources]\n项目源码：src/agent/planner.ts；netlify/functions/plan.ts；src/tools/\n项目在线版：https://nanxi-smart-travel.netlify.app\n[/Sources]"}
+{"kind":"slide","id":"sl/umi4uk","slide":4,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":6}
+{"kind":"textbox","id":"sh/j2x47uhc","slide":4,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
+{"kind":"textbox","id":"sh/436lgzix","slide":4,"name":"页码","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
+{"kind":"textbox","id":"sh/54zm94zi","slide":4,"name":"标题","text":"结果集中呈现：路线、时间、预算、风险与执行轨迹","textPreview":"结果集中呈现：路线、时间、预算、风险与执行轨迹","textChars":23,"textLines":1,"bbox":[60,85,1160,92]}
+{"kind":"shape","id":"sh/uxo3ap0v","slide":4,"name":"分隔线","bbox":[60,181,1160,2]}
+{"kind":"shape","id":"sh/wz6lcfi1","slide":4,"name":"分隔线","bbox":[922,221,2,2]}
+{"kind":"textbox","id":"sh/h0fm5kzm","slide":4,"name":"驾驶舱说明","text":"一屏可核查","textPreview":"一屏可核查","textChars":5,"textLines":1,"bbox":[947,230,265,42]}
+{"kind":"textbox","id":"sh/m943650z","slide":4,"name":"可见内容","text":"逐站时间轴\n路线示意\n预算拆分\nAgent 工具轨迹","textPreview":"逐站时间轴 | 路线示意 | 预算拆分 | Agent 工具轨迹","textChars":26,"textLines":4,"bbox":[947,300,260,208]}
+{"kind":"textbox","id":"sh/7ad4zah4","slide":4,"name":"截图口径","text":"截图为规则演示模式；线上版已接入 AI 约束解析。","textPreview":"截图为规则演示模式；线上版已接入 AI 约束解析。","textChars":25,"textLines":1,"bbox":[947,560,250,90]}
+{"kind":"image","id":"im/a5gfqdof","slide":4,"name":"","alt":"行程驾驶舱截图","bbox":[60,205,835,455]}
+{"kind":"notes","id":"nt/umi4uk","slide":4,"text":"指向路线、预算和右侧工具轨迹。注意此截图创建于 AI Gateway 开启前，界面标记为规则演示解析，线上实时演示应以当前页面为准。\n\n[Sources]\n产品截图：本项目 artifacts/ui/02-cockpit.png\n项目在线版：https://nanxi-smart-travel.netlify.app\n[/Sources]"}
+{"kind":"slide","id":"sl/f5yddb","slide":5,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":6}
+{"kind":"textbox","id":"sh/4vy9sbmt","slide":5,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
+{"kind":"textbox","id":"sh/3upsj65o","slide":5,"name":"页码","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
+{"kind":"textbox","id":"sh/itgrq143","slide":5,"name":"标题","text":"途中下雨后，只修改还没发生的行程","textPreview":"途中下雨后，只修改还没发生的行程","textChars":16,"textLines":1,"bbox":[60,85,1160,92]}
+{"kind":"shape","id":"sh/hs7ahwni","slide":5,"name":"分隔线","bbox":[60,181,1160,2]}
+{"kind":"textbox","id":"sh/g7y9ormx","slide":5,"name":"原则","text":"已完成节点锁定","textPreview":"已完成节点锁定","textChars":7,"textLines":1,"bbox":[60,250,360,50]}
+{"kind":"textbox","id":"sh/v65sf65c","slide":5,"name":"解释","text":"上午的行程保留；\n后续户外节点替换；\n路线与预算同步重算。","textPreview":"上午的行程保留； | 后续户外节点替换； | 路线与预算同步重算。","textChars":29,"textLines":3,"bbox":[60,327,340,184]}
+{"kind":"textbox","id":"sh/u5wrm14r","slide":5,"name":"风险标记","text":"阵雨为可复现演示情境，\n不冒充当天实时天气。","textPreview":"阵雨为可复现演示情境， | 不冒充当天实时天气。","textChars":22,"textLines":2,"bbox":[60,562,340,66]}
+{"kind":"image","id":"im/0zmxc7mh","slide":5,"name":"","alt":"午后阵雨局部重排截图","bbox":[440,210,780,445]}
+{"kind":"notes","id":"nt/f5yddb","slide":5,"text":"点击“情况有变，重新规划”，触发午后阵雨。强调已完成节点不可改写，这是核心创新。\n\n[Sources]\n产品截图：本项目 artifacts/ui/03-rain-replan.png\n项目源码：src/agent/replanner.ts\n[/Sources]"}
+{"kind":"slide","id":"sl/ztkoa3","slide":6,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":11}
+{"kind":"textbox","id":"sh/i9g76t8f","slide":6,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
+{"kind":"textbox","id":"sh/5crq1o76","slide":6,"name":"页码","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
+{"kind":"textbox","id":"sh/kbip8jql","slide":6,"name":"标题","text":"可信边界清楚，才有机会真正落地","textPreview":"可信边界清楚，才有机会真正落地","textChars":15,"textLines":1,"bbox":[60,85,1160,92]}
+{"kind":"shape","id":"sh/7e983ypw","slide":6,"name":"分隔线","bbox":[60,181,1160,2]}
+{"kind":"textbox","id":"sh/6d07at8r","slide":6,"name":"边界标题0","text":"模型做理解","textPreview":"模型做理解","textChars":5,"textLines":1,"bbox":[60,230,510,52]}
+{"kind":"shape","id":"sh/tgrq5872","slide":6,"name":"分隔线","bbox":[60,292,490,2]}
+{"kind":"textbox","id":"sh/sfipc3qh","slide":6,"name":"边界正文0","text":"不让模型直接决定预算、开放与安全","textPreview":"不让模型直接决定预算、开放与安全","textChars":16,"textLines":1,"bbox":[60,307,515,92]}
+{"kind":"textbox","id":"sh/ni5ore9s","slide":6,"name":"边界标题1","text":"工具做执行","textPreview":"工具做执行","textChars":5,"textLines":1,"bbox":[650,230,510,52]}
+{"kind":"shape","id":"sh/mhw7y987","slide":6,"name":"分隔线","bbox":[650,292,490,2]}
+{"kind":"textbox","id":"sh/ofipgzah","slide":6,"name":"边界正文1","text":"天气、点位、路线、费用逐步计算","textPreview":"天气、点位、路线、费用逐步计算","textChars":15,"textLines":1,"bbox":[650,307,515,92]}
+{"kind":"textbox","id":"sh/pgrq9kb2","slide":6,"name":"边界标题2","text":"规则做兜底","textPreview":"规则做兜底","textChars":5,"textLines":1,"bbox":[60,418,510,52]}
+{"kind":"shape","id":"sh/2dg7epsb","slide":6,"name":"分隔线","bbox":[60,480,490,2]}
+{"kind":"textbox","id":"sh/3e987utw","slide":6,"name":"边界正文2","text":"服务异常时明确降级和风险提示","textPreview":"服务异常时明确降级和风险提示","textChars":14,"textLines":1,"bbox":[60,495,515,92]}
+{"kind":"textbox","id":"sh/cjipkzad","slide":6,"name":"边界标题3","text":"结果可带走","textPreview":"结果可带走","textChars":5,"textLines":1,"bbox":[650,418,510,52]}
+{"kind":"shape","id":"sh/dkrqd4by","slide":6,"name":"分隔线","bbox":[650,480,490,2]}
+{"kind":"textbox","id":"sh/qh07ips7","slide":6,"name":"边界正文3","text":"中文 PDF、ICS 日历、脱敏云端分享","textPreview":"中文 PDF、ICS 日历、脱敏云端分享","textChars":20,"textLines":1,"bbox":[650,495,515,92]}
+{"kind":"notes","id":"nt/ztkoa3","slide":6,"text":"不把现有坐标估算说成实时地图导航，也不宣称已接入支付或预订。\n\n[Sources]\n项目源码：src/agent/；src/tools/；src/services/export.ts；netlify/functions/\n项目说明：README.md\n[/Sources]"}
+{"kind":"slide","id":"sl/ld9h87","slide":7,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":10}
+{"kind":"textbox","id":"sh/q50v2hgb","slide":7,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
+{"kind":"textbox","id":"sh/dsrudwz2","slide":7,"name":"页码","text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
+{"kind":"textbox","id":"sh/srid4ryh","slide":7,"name":"标题","text":"当前已是可公开体验的产品，而非概念图","textPreview":"当前已是可公开体验的产品，而非概念图","textChars":18,"textLines":1,"bbox":[60,85,1160,92]}
+{"kind":"shape","id":"sh/32pc7mh0","slide":7,"name":"分隔线","bbox":[60,181,1160,2]}
+{"kind":"textbox","id":"sh/i1gbyh0f","slide":7,"name":"数字0","text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[60,245,345,150]}
+{"kind":"shape","id":"sh/54ru9czq","slide":7,"name":"分隔线","bbox":[60,407,345,2]}
+{"kind":"textbox","id":"sh/43id0ry5","slide":7,"name":"指标0","text":"永嘉相关点位记录","textPreview":"永嘉相关点位记录","textChars":8,"textLines":1,"bbox":[60,430,345,75]}
+{"kind":"textbox","id":"sh/nytcj6h4","slide":7,"name":"数字1","text":"35","textPreview":"35","textChars":2,"textLines":1,"bbox":[460,245,345,150]}
+{"kind":"shape","id":"sh/2xkva1gj","slide":7,"name":"分隔线","bbox":[460,407,345,2]}
+{"kind":"textbox","id":"sh/sf2pw3ql","slide":7,"name":"指标1","text":"单元与组件测试","textPreview":"单元与组件测试","textChars":7,"textLines":1,"bbox":[460,430,345,75]}
+{"kind":"textbox","id":"sh/t0v65876","slide":7,"name":"数字2","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[860,245,345,150]}
+{"kind":"shape","id":"sh/6dk7ut8f","slide":7,"name":"分隔线","bbox":[860,407,345,2]}
+{"kind":"textbox","id":"sh/reto3yp0","slide":7,"name":"指标2","text":"公网可体验 MVP","textPreview":"公网可体验 MVP","textChars":9,"textLines":1,"bbox":[860,430,345,75]}
+{"kind":"textbox","id":"sh/kb2psjq9","slide":7,"name":"补充","text":"另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。","textPreview":"另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。","textChars":44,"textLines":1,"bbox":[60,576,1140,65]}
+{"kind":"notes","id":"nt/ld9h87","slide":7,"text":"所有数量为 2026-09-12 开发记录，提交前应重新运行验证。\n\n[Sources]\n项目源码：src/data/pois.ts；tests/；README.md\n项目验证记录：docs/demo-checklist.md\n在线体验：https://nanxi-smart-travel.netlify.app\n[/Sources]"}
+{"kind":"slide","id":"sl/jepkva","slide":8,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":13}
+{"kind":"textbox","id":"sh/xovyx8ra","slide":8,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
+{"kind":"textbox","id":"sh/al4zmd8z","slide":8,"name":"页码","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
+{"kind":"textbox","id":"sh/bmdgvi9k","slide":8,"name":"标题","text":"从游客 MVP，走向可运营的县域文旅工具","textPreview":"从游客 MVP，走向可运营的县域文旅工具","textChars":20,"textLines":1,"bbox":[60,85,1160,92]}
+{"kind":"shape","id":"sh/oj2hk3at","slide":8,"name":"分隔线","bbox":[60,181,1160,2]}
+{"kind":"shape","id":"sh/pkbyt8re","slide":8,"name":"分隔线","bbox":[65,335,1120,2]}
+{"kind":"shape","id":"sh/2hkzitsn","slide":8,"name":"节点0","bbox":[60,329,14,14]}
+{"kind":"textbox","id":"sh/3itgry98","slide":8,"name":"时期0","text":"现在","textPreview":"现在","textChars":2,"textLines":1,"bbox":[60,245,350,55]}
+{"kind":"textbox","id":"sh/8f6hw7qx","slide":8,"name":"阶段0","text":"游客侧 MVP","textPreview":"游客侧 MVP","textChars":7,"textLines":1,"bbox":[60,385,350,55]}
+{"kind":"textbox","id":"sh/9gfi5sri","slide":8,"name":"任务0","text":"在线生成、重排、导出","textPreview":"在线生成、重排、导出","textChars":10,"textLines":1,"bbox":[60,455,345,92]}
+{"kind":"shape","id":"sh/xkzq1ofm","slide":8,"name":"节点1","bbox":[460,329,14,14]}
+{"kind":"textbox","id":"sh/cjq9sjy1","slide":8,"name":"时期1","text":"0—3 个月","textPreview":"0—3 个月","textChars":6,"textLines":1,"bbox":[460,245,350,55]}
+{"kind":"textbox","id":"sh/bih8zexg","slide":8,"name":"阶段1","text":"真实游客试点","textPreview":"真实游客试点","textChars":6,"textLines":1,"bbox":[460,385,350,55]}
+{"kind":"textbox","id":"sh/ah8rq9gv","slide":8,"name":"任务1","text":"核查可执行性与反馈","textPreview":"核查可执行性与反馈","textChars":9,"textLines":1,"bbox":[460,455,345,92]}
+{"kind":"shape","id":"sh/pgzqx4fq","slide":8,"name":"节点2","bbox":[860,329,14,14]}
+{"kind":"textbox","id":"sh/ofq9ozy5","slide":8,"name":"时期2","text":"3—12 个月","textPreview":"3—12 个月","textChars":7,"textLines":1,"bbox":[860,245,350,55]}
+{"kind":"textbox","id":"sh/nux8vuxk","slide":8,"name":"阶段2","text":"运营侧产品","textPreview":"运营侧产品","textChars":5,"textLines":1,"bbox":[860,385,350,55]}
+{"kind":"textbox","id":"sh/2tormpgz","slide":8,"name":"任务2","text":"授权内容维护、路线配置","textPreview":"授权内容维护、路线配置","textChars":11,"textLines":1,"bbox":[860,455,345,92]}
+{"kind":"textbox","id":"sh/9cja98fu","slide":8,"name":"商业口径","text":"景区/乡村运营方 SaaS 为探索方向，当前暂无签约客户与收入。","textPreview":"景区/乡村运营方 SaaS 为探索方向，当前暂无签约客户与收入。","textChars":32,"textLines":1,"bbox":[60,610,1130,45]}
+{"kind":"notes","id":"nt/jepkva","slide":8,"text":"OPC 轻量路径：公开资料起步，个人主创与 AI 辅助研发，先以真实试点验证再谈收费。\n\n[Sources]\n项目商业规划：参赛申报书第八至九节\n大赛 OPC 与永嘉特色产业方向：https://www.kdocs.cn/l/crAjwHTDW2VE\n[/Sources]"}
+{"kind":"slide","id":"sl/7p6u5d","slide":9,"title":"让楠溪江行程，真正跟得上变化。","textShapes":4}
+{"kind":"textbox","id":"sh/3mh8natw","slide":9,"name":"收束","text":"让楠溪江行程，真正跟得上变化。","textPreview":"让楠溪江行程，真正跟得上变化。","textChars":15,"textLines":1,"bbox":[60,150,1140,185]}
+{"kind":"shape","id":"sh/onq9gfah","slide":9,"name":"分隔线","bbox":[60,396,1120,2]}
+{"kind":"textbox","id":"sh/pozqpkb2","slide":9,"name":"呼吁","text":"寻找真实游客与文旅场景试点，验证行程可执行性。","textPreview":"寻找真实游客与文旅场景试点，验证行程可执行性。","textChars":23,"textLines":1,"bbox":[60,431,1090,90]}
+{"kind":"textbox","id":"sh/ehoralsf","slide":9,"name":"网址","text":"nanxi-smart-travel.netlify.app","textPreview":"nanxi-smart-travel.netlify.app","textChars":30,"textLines":1,"bbox":[60,585,900,54]}
+{"kind":"textbox","id":"sh/fix8jqt0","slide":9,"name":"赛道","text":"赛道一 · 命题二 · 楠溪智游","textPreview":"赛道一 · 命题二 · 楠溪智游","textChars":16,"textLines":1,"bbox":[60,650,600,30]}
+{"kind":"notes","id":"nt/7p6u5d","slide":9,"text":"结束时打开网址交给评委体验。\n\n[Sources]\n在线作品：https://nanxi-smart-travel.netlify.app\n大赛赛道说明：https://www.kdocs.cn/l/crAjwHTDW2VE\n[/Sources]"}

@@ -1,0 +1,1058 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jepkva",
+    "id": "jepkva",
+    "slide": 8,
+    "layoutId": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xovyx8ra",
+      "id": "1",
+      "name": "页眉",
+      "bbox": [
+        60,
+        30,
+        700,
+        25
+      ],
+      "geometry": "rect",
+      "text": "楠溪智游  /  赛道一 · 命题二",
+      "textPreview": "楠溪智游  /  赛道一 · 命题二",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "楠溪智游  /  赛道一 · 命题二"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "楠溪智游  /  赛道一 · 命题二",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "楠溪智游  /  赛道一 · 命题二",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al4zmd8z",
+      "id": "2",
+      "name": "页码",
+      "bbox": [
+        1180,
+        30,
+        40,
+        25
+      ],
+      "geometry": "rect",
+      "text": "08",
+      "textPreview": "08",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "08"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "08",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "08",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bmdgvi9k",
+      "id": "3",
+      "name": "标题",
+      "bbox": [
+        60,
+        85,
+        1160,
+        92
+      ],
+      "geometry": "rect",
+      "text": "从游客 MVP，走向可运营的县域文旅工具",
+      "textPreview": "从游客 MVP，走向可运营的县域文旅工具",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "从游客 MVP，走向可运营的县域文旅工具"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "从游客 MVP，走向可运营的县域文旅工具",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "从游客 MVP，走向可运营的县域文旅工具",
+              "fontSize": 40,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oj2hk3at",
+      "id": "4",
+      "name": "分隔线",
+      "bbox": [
+        60,
+        181,
+        1160,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9D8D0",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkbyt8re",
+      "id": "5",
+      "name": "分隔线",
+      "bbox": [
+        65,
+        335,
+        1120,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#277A56",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2hkzitsn",
+      "id": "6",
+      "name": "节点0",
+      "bbox": [
+        60,
+        329,
+        14,
+        14
+      ],
+      "geometry": "rect",
+      "fillColor": "#277A56",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3itgry98",
+      "id": "7",
+      "name": "时期0",
+      "bbox": [
+        60,
+        245,
+        350,
+        55
+      ],
+      "geometry": "rect",
+      "text": "现在",
+      "textPreview": "现在",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "现在"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "现在",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "现在",
+              "fontSize": 26,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8f6hw7qx",
+      "id": "8",
+      "name": "阶段0",
+      "bbox": [
+        60,
+        385,
+        350,
+        55
+      ],
+      "geometry": "rect",
+      "text": "游客侧 MVP",
+      "textPreview": "游客侧 MVP",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 29,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "游客侧 MVP"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "游客侧 MVP",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "游客侧 MVP",
+              "fontSize": 29,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gfi5sri",
+      "id": "9",
+      "name": "任务0",
+      "bbox": [
+        60,
+        455,
+        345,
+        92
+      ],
+      "geometry": "rect",
+      "text": "在线生成、重排、导出",
+      "textPreview": "在线生成、重排、导出",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "在线生成、重排、导出"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "在线生成、重排、导出",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "在线生成、重排、导出",
+              "fontSize": 21,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xkzq1ofm",
+      "id": "10",
+      "name": "节点1",
+      "bbox": [
+        460,
+        329,
+        14,
+        14
+      ],
+      "geometry": "rect",
+      "fillColor": "#277A56",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cjq9sjy1",
+      "id": "11",
+      "name": "时期1",
+      "bbox": [
+        460,
+        245,
+        350,
+        55
+      ],
+      "geometry": "rect",
+      "text": "0—3 个月",
+      "textPreview": "0—3 个月",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0—3 个月"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "0—3 个月",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "0—3 个月",
+              "fontSize": 26,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bih8zexg",
+      "id": "12",
+      "name": "阶段1",
+      "bbox": [
+        460,
+        385,
+        350,
+        55
+      ],
+      "geometry": "rect",
+      "text": "真实游客试点",
+      "textPreview": "真实游客试点",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 29,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "真实游客试点"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "真实游客试点",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "真实游客试点",
+              "fontSize": 29,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ah8rq9gv",
+      "id": "13",
+      "name": "任务1",
+      "bbox": [
+        460,
+        455,
+        345,
+        92
+      ],
+      "geometry": "rect",
+      "text": "核查可执行性与反馈",
+      "textPreview": "核查可执行性与反馈",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核查可执行性与反馈"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核查可执行性与反馈",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核查可执行性与反馈",
+              "fontSize": 21,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pgzqx4fq",
+      "id": "14",
+      "name": "节点2",
+      "bbox": [
+        860,
+        329,
+        14,
+        14
+      ],
+      "geometry": "rect",
+      "fillColor": "#277A56",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofq9ozy5",
+      "id": "15",
+      "name": "时期2",
+      "bbox": [
+        860,
+        245,
+        350,
+        55
+      ],
+      "geometry": "rect",
+      "text": "3—12 个月",
+      "textPreview": "3—12 个月",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3—12 个月"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3—12 个月",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3—12 个月",
+              "fontSize": 26,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nux8vuxk",
+      "id": "16",
+      "name": "阶段2",
+      "bbox": [
+        860,
+        385,
+        350,
+        55
+      ],
+      "geometry": "rect",
+      "text": "运营侧产品",
+      "textPreview": "运营侧产品",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 29,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "运营侧产品"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "运营侧产品",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "运营侧产品",
+              "fontSize": 29,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2tormpgz",
+      "id": "17",
+      "name": "任务2",
+      "bbox": [
+        860,
+        455,
+        345,
+        92
+      ],
+      "geometry": "rect",
+      "text": "授权内容维护、路线配置",
+      "textPreview": "授权内容维护、路线配置",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "授权内容维护、路线配置"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "授权内容维护、路线配置",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "授权内容维护、路线配置",
+              "fontSize": 21,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9cja98fu",
+      "id": "18",
+      "name": "商业口径",
+      "bbox": [
+        60,
+        610,
+        1130,
+        45
+      ],
+      "geometry": "rect",
+      "text": "景区/乡村运营方 SaaS 为探索方向，当前暂无签约客户与收入。",
+      "textPreview": "景区/乡村运营方 SaaS 为探索方向，当前暂无签约客户与收入。",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "景区/乡村运营方 SaaS 为探索方向，当前暂无签约客户与收入。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "景区/乡村运营方 SaaS 为探索方向，当前暂无签约客户与收入。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "景区/乡村运营方 SaaS 为探索方向，当前暂无签约客户与收入。",
+              "fontSize": 18,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

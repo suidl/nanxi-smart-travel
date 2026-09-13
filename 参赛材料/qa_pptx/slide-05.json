@@ -1,0 +1,595 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/f5yddb",
+    "id": "f5yddb",
+    "slide": 5,
+    "layoutId": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vy9sbmt",
+      "id": "1",
+      "name": "页眉",
+      "bbox": [
+        60,
+        30,
+        700,
+        25
+      ],
+      "geometry": "rect",
+      "text": "楠溪智游  /  赛道一 · 命题二",
+      "textPreview": "楠溪智游  /  赛道一 · 命题二",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "楠溪智游  /  赛道一 · 命题二"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "楠溪智游  /  赛道一 · 命题二",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "楠溪智游  /  赛道一 · 命题二",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3upsj65o",
+      "id": "2",
+      "name": "页码",
+      "bbox": [
+        1180,
+        30,
+        40,
+        25
+      ],
+      "geometry": "rect",
+      "text": "05",
+      "textPreview": "05",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itgrq143",
+      "id": "3",
+      "name": "标题",
+      "bbox": [
+        60,
+        85,
+        1160,
+        92
+      ],
+      "geometry": "rect",
+      "text": "途中下雨后，只修改还没发生的行程",
+      "textPreview": "途中下雨后，只修改还没发生的行程",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "途中下雨后，只修改还没发生的行程"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "途中下雨后，只修改还没发生的行程",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "途中下雨后，只修改还没发生的行程",
+              "fontSize": 40,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hs7ahwni",
+      "id": "4",
+      "name": "分隔线",
+      "bbox": [
+        60,
+        181,
+        1160,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9D8D0",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7y9ormx",
+      "id": "5",
+      "name": "原则",
+      "bbox": [
+        60,
+        250,
+        360,
+        50
+      ],
+      "geometry": "rect",
+      "text": "已完成节点锁定",
+      "textPreview": "已完成节点锁定",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 32,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "已完成节点锁定"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "已完成节点锁定",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "已完成节点锁定",
+              "fontSize": 32,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v65sf65c",
+      "id": "6",
+      "name": "解释",
+      "bbox": [
+        60,
+        327,
+        340,
+        184
+      ],
+      "geometry": "rect",
+      "text": "上午的行程保留；\n后续户外节点替换；\n路线与预算同步重算。",
+      "textPreview": "上午的行程保留； | 后续户外节点替换； | 路线与预算同步重算。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "上午的行程保留；"
+          },
+          {
+            "index": 2,
+            "text": "后续户外节点替换；"
+          },
+          {
+            "index": 3,
+            "text": "路线与预算同步重算。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "上午的行程保留；",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "上午的行程保留；",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "后续户外节点替换；",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "后续户外节点替换；",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "路线与预算同步重算。",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "路线与预算同步重算。",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u5wrm14r",
+      "id": "7",
+      "name": "风险标记",
+      "bbox": [
+        60,
+        562,
+        340,
+        66
+      ],
+      "geometry": "rect",
+      "text": "阵雨为可复现演示情境，\n不冒充当天实时天气。",
+      "textPreview": "阵雨为可复现演示情境， | 不冒充当天实时天气。",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "阵雨为可复现演示情境，"
+          },
+          {
+            "index": 2,
+            "text": "不冒充当天实时天气。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "阵雨为可复现演示情境，",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "阵雨为可复现演示情境，",
+              "fontSize": 17,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "不冒充当天实时天气。",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不冒充当天实时天气。",
+              "fontSize": 17,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/0zmxc7mh",
+      "id": "8",
+      "bbox": [
+        440,
+        210,
+        780,
+        445
+      ],
+      "alt": "午后阵雨局部重排截图",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "994103b1-0d8d-4c15-bcb1-9a90ba08cf76",
+        "contentType": "image/png",
+        "byteLength": 218711
+      }
+    }
+  ],
+  "composeRuns": []
+}

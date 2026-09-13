@@ -1,0 +1,837 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ld9h87",
+    "id": "ld9h87",
+    "slide": 7,
+    "layoutId": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "9d5db0c0-38da-4f4d-88b3-16ef9100229f",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "f2b18306-d4d5-45bb-bfff-3d3a19494b02",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q50v2hgb",
+      "id": "1",
+      "name": "页眉",
+      "bbox": [
+        60,
+        30,
+        700,
+        25
+      ],
+      "geometry": "rect",
+      "text": "楠溪智游  /  赛道一 · 命题二",
+      "textPreview": "楠溪智游  /  赛道一 · 命题二",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "楠溪智游  /  赛道一 · 命题二"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "楠溪智游  /  赛道一 · 命题二",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "楠溪智游  /  赛道一 · 命题二",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dsrudwz2",
+      "id": "2",
+      "name": "页码",
+      "bbox": [
+        1180,
+        30,
+        40,
+        25
+      ],
+      "geometry": "rect",
+      "text": "07",
+      "textPreview": "07",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "07"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "07",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "07",
+              "fontSize": 16,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/srid4ryh",
+      "id": "3",
+      "name": "标题",
+      "bbox": [
+        60,
+        85,
+        1160,
+        92
+      ],
+      "geometry": "rect",
+      "text": "当前已是可公开体验的产品，而非概念图",
+      "textPreview": "当前已是可公开体验的产品，而非概念图",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "当前已是可公开体验的产品，而非概念图"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "当前已是可公开体验的产品，而非概念图",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "当前已是可公开体验的产品，而非概念图",
+              "fontSize": 40,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32pc7mh0",
+      "id": "4",
+      "name": "分隔线",
+      "bbox": [
+        60,
+        181,
+        1160,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9D8D0",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i1gbyh0f",
+      "id": "5",
+      "name": "数字0",
+      "bbox": [
+        60,
+        245,
+        345,
+        150
+      ],
+      "geometry": "rect",
+      "text": "27",
+      "textPreview": "27",
+      "resolvedFontSize": 89,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 89,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "27"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "27",
+          "resolvedTextStyle": {
+            "fontSize": 89,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "27",
+              "fontSize": 89,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54ru9czq",
+      "id": "6",
+      "name": "分隔线",
+      "bbox": [
+        60,
+        407,
+        345,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9D8D0",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/43id0ry5",
+      "id": "7",
+      "name": "指标0",
+      "bbox": [
+        60,
+        430,
+        345,
+        75
+      ],
+      "geometry": "rect",
+      "text": "永嘉相关点位记录",
+      "textPreview": "永嘉相关点位记录",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "永嘉相关点位记录"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "永嘉相关点位记录",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "永嘉相关点位记录",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nytcj6h4",
+      "id": "8",
+      "name": "数字1",
+      "bbox": [
+        460,
+        245,
+        345,
+        150
+      ],
+      "geometry": "rect",
+      "text": "35",
+      "textPreview": "35",
+      "resolvedFontSize": 89,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 89,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "35"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "35",
+          "resolvedTextStyle": {
+            "fontSize": 89,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "35",
+              "fontSize": 89,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xkva1gj",
+      "id": "9",
+      "name": "分隔线",
+      "bbox": [
+        460,
+        407,
+        345,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9D8D0",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sf2pw3ql",
+      "id": "10",
+      "name": "指标1",
+      "bbox": [
+        460,
+        430,
+        345,
+        75
+      ],
+      "geometry": "rect",
+      "text": "单元与组件测试",
+      "textPreview": "单元与组件测试",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "单元与组件测试"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "单元与组件测试",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "单元与组件测试",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t0v65876",
+      "id": "11",
+      "name": "数字2",
+      "bbox": [
+        860,
+        245,
+        345,
+        150
+      ],
+      "geometry": "rect",
+      "text": "1",
+      "textPreview": "1",
+      "resolvedFontSize": 89,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 89,
+        "typeface": "Microsoft YaHei",
+        "color": "#277A56",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1",
+          "resolvedTextStyle": {
+            "fontSize": 89,
+            "typeface": "Microsoft YaHei",
+            "color": "#277A56",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1",
+              "fontSize": 89,
+              "typeface": "Microsoft YaHei",
+              "color": "#277A56",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6dk7ut8f",
+      "id": "12",
+      "name": "分隔线",
+      "bbox": [
+        860,
+        407,
+        345,
+        2
+      ],
+      "geometry": "rect",
+      "fillColor": "#C9D8D0",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/reto3yp0",
+      "id": "13",
+      "name": "指标2",
+      "bbox": [
+        860,
+        430,
+        345,
+        75
+      ],
+      "geometry": "rect",
+      "text": "公网可体验 MVP",
+      "textPreview": "公网可体验 MVP",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Microsoft YaHei",
+        "color": "#152C2B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "公网可体验 MVP"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "公网可体验 MVP",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Microsoft YaHei",
+            "color": "#152C2B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "公网可体验 MVP",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#152C2B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kb2psjq9",
+      "id": "14",
+      "name": "补充",
+      "bbox": [
+        60,
+        576,
+        1140,
+        65
+      ],
+      "geometry": "rect",
+      "text": "另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。",
+      "textPreview": "另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 19,
+        "typeface": "Microsoft YaHei",
+        "color": "#53635F",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "typeface": "Microsoft YaHei",
+            "color": "#53635F",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。",
+              "fontSize": 19,
+              "typeface": "Microsoft YaHei",
+              "color": "#53635F",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}
