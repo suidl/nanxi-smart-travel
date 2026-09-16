@@ -28,7 +28,8 @@ export function resolveGatewayEnvironment(getEnvironment: PlanDependencies['getE
     apiKey: getEnvironment('YONGJIA')
       ?? getEnvironment('OPENAI_API_KEY')
       ?? getEnvironment('NETLIFY_AI_GATEWAY_KEY'),
-    baseURL: getEnvironment('OPENAI_BASE_URL')
+    baseURL: getEnvironment('YONGJIA_BASE_URL')
+      ?? getEnvironment('OPENAI_BASE_URL')
       ?? getEnvironment('NETLIFY_AI_GATEWAY_BASE_URL')
       ?? getEnvironment('NETLIFY_AI_GATEWAY_URL'),
   }
