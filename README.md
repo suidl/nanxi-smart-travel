@@ -2,7 +2,7 @@
 
 面向楠溪江家庭自由行游客的动态行程决策智能体。它会根据同行人、预算、天气、偏好和步行强度，依次完成约束理解、天气查询、景点筛选、路线估算、预算核算和可执行性校验；途中情况变化时，只重排尚未完成的行程。
 
-公网体验：[https://nanxi-smart-travel.netlify.app](https://nanxi-smart-travel.netlify.app)
+公网体验：[https://naxi-travel-ai.netlify.app](https://naxi-travel-ai.netlify.app)
 
 ## 本地运行
 

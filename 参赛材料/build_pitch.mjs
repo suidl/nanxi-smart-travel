@@ -88,7 +88,7 @@ async function addImage(slide, rel, name, x,y,w,h,fit='contain') {
   });
   notes(s,'模型负责需求解析；预算、路线、检查由工具和规则完成。工具轨迹中的展示耗时尚非生产级真实性能计量。',[
     '项目源码：src/agent/planner.ts；netlify/functions/plan.ts；src/tools/',
-    '项目在线版：https://nanxi-smart-travel.netlify.app'
+    '项目在线版：https://naxi-travel-ai.netlify.app'
   ]);
 }
 
@@ -102,7 +102,7 @@ async function addImage(slide, rel, name, x,y,w,h,fit='contain') {
   txt(s,'截图口径','截图为规则演示模式；线上版已接入 AI 约束解析。',947,560,250,90,17,C.muted);
   notes(s,'指向路线、预算和右侧工具轨迹。注意此截图创建于 AI Gateway 开启前，界面标记为规则演示解析，线上实时演示应以当前页面为准。',[
     '产品截图：本项目 artifacts/ui/02-cockpit.png',
-    '项目在线版：https://nanxi-smart-travel.netlify.app'
+    '项目在线版：https://naxi-travel-ai.netlify.app'
   ]);
 }
 
@@ -151,7 +151,7 @@ async function addImage(slide, rel, name, x,y,w,h,fit='contain') {
   notes(s,'所有数量为 2026-09-12 开发记录，提交前应重新运行验证。',[
     '项目源码：src/data/pois.ts；tests/；README.md',
     '项目验证记录：docs/demo-checklist.md',
-    '在线体验：https://nanxi-smart-travel.netlify.app'
+    '在线体验：https://naxi-travel-ai.netlify.app'
   ]);
 }
 
@@ -183,10 +183,10 @@ async function addImage(slide, rel, name, x,y,w,h,fit='contain') {
   txt(s,'收束','让楠溪江行程，真正跟得上变化。',60,150,1140,185,52,C.ink,true);
   rule(s,60,396,1120,C.green);
   txt(s,'呼吁','寻找真实游客与文旅场景试点，验证行程可执行性。',60,431,1090,90,29,C.green,true);
-  txt(s,'网址','nanxi-smart-travel.netlify.app',60,585,900,54,30,C.ink);
+  txt(s,'网址','naxi-travel-ai.netlify.app',60,585,900,54,30,C.ink);
   txt(s,'赛道','赛道一 · 命题二 · 楠溪智游',60,650,600,30,16,C.muted);
   notes(s,'结束时打开网址交给评委体验。',[
-    '在线作品：https://nanxi-smart-travel.netlify.app',
+    '在线作品：https://naxi-travel-ai.netlify.app',
     '大赛赛道说明：https://www.kdocs.cn/l/crAjwHTDW2VE'
   ]);
 }

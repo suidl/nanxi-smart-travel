@@ -23,7 +23,7 @@ const created=Date.now();
 const page=await context.newPage();
 let success=false, preroll=0, generatedVideo='';
 try {
-  await page.goto('https://nanxi-smart-travel.netlify.app',{waitUntil:'domcontentloaded',timeout:30000});
+  await page.goto('https://naxi-travel-ai.netlify.app',{waitUntil:'domcontentloaded',timeout:30000});
   await page.getByRole('heading',{name:/把复杂的楠溪江行程/}).waitFor({timeout:30000});
   await page.evaluate(() => {
     document.documentElement.style.scrollBehavior='smooth';

@@ -48,7 +48,7 @@
 {"kind":"textbox","id":"sh/9oryl0ni","slide":3,"name":"步骤5","text":"检查风险","textPreview":"检查风险","textChars":4,"textLines":1,"bbox":[931,405,270,45]}
 {"kind":"shape","id":"sh/onihsvmd","slide":3,"name":"分隔线","bbox":[856,461,340,2]}
 {"kind":"textbox","id":"sh/3q5g7658","slide":3,"name":"说明5","text":"开放、天气、体力与预算","textPreview":"开放、天气、体力与预算","textChars":11,"textLines":1,"bbox":[856,474,345,70]}
-{"kind":"notes","id":"nt/16l115","slide":3,"text":"模型负责需求解析；预算、路线、检查由工具和规则完成。工具轨迹中的展示耗时尚非生产级真实性能计量。\n\n[Sources]\n项目源码：src/agent/planner.ts；netlify/functions/plan.ts；src/tools/\n项目在线版：https://nanxi-smart-travel.netlify.app\n[/Sources]"}
+{"kind":"notes","id":"nt/16l115","slide":3,"text":"模型负责需求解析；预算、路线、检查由工具和规则完成。工具轨迹中的展示耗时尚非生产级真实性能计量。\n\n[Sources]\n项目源码：src/agent/planner.ts；netlify/functions/plan.ts；src/tools/\n项目在线版：https://naxi-travel-ai.netlify.app\n[/Sources]"}
 {"kind":"slide","id":"sl/umi4uk","slide":4,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":6}
 {"kind":"textbox","id":"sh/j2x47uhc","slide":4,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
 {"kind":"textbox","id":"sh/436lgzix","slide":4,"name":"页码","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
@@ -59,7 +59,7 @@
 {"kind":"textbox","id":"sh/m943650z","slide":4,"name":"可见内容","text":"逐站时间轴\n路线示意\n预算拆分\nAgent 工具轨迹","textPreview":"逐站时间轴 | 路线示意 | 预算拆分 | Agent 工具轨迹","textChars":26,"textLines":4,"bbox":[947,300,260,208]}
 {"kind":"textbox","id":"sh/7ad4zah4","slide":4,"name":"截图口径","text":"截图为规则演示模式；线上版已接入 AI 约束解析。","textPreview":"截图为规则演示模式；线上版已接入 AI 约束解析。","textChars":25,"textLines":1,"bbox":[947,560,250,90]}
 {"kind":"image","id":"im/a5gfqdof","slide":4,"name":"","alt":"行程驾驶舱截图","bbox":[60,205,835,455]}
-{"kind":"notes","id":"nt/umi4uk","slide":4,"text":"指向路线、预算和右侧工具轨迹。注意此截图创建于 AI Gateway 开启前，界面标记为规则演示解析，线上实时演示应以当前页面为准。\n\n[Sources]\n产品截图：本项目 artifacts/ui/02-cockpit.png\n项目在线版：https://nanxi-smart-travel.netlify.app\n[/Sources]"}
+{"kind":"notes","id":"nt/umi4uk","slide":4,"text":"指向路线、预算和右侧工具轨迹。注意此截图创建于 AI Gateway 开启前，界面标记为规则演示解析，线上实时演示应以当前页面为准。\n\n[Sources]\n产品截图：本项目 artifacts/ui/02-cockpit.png\n项目在线版：https://naxi-travel-ai.netlify.app\n[/Sources]"}
 {"kind":"slide","id":"sl/f5yddb","slide":5,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":6}
 {"kind":"textbox","id":"sh/4vy9sbmt","slide":5,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
 {"kind":"textbox","id":"sh/3upsj65o","slide":5,"name":"页码","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
@@ -103,7 +103,7 @@
 {"kind":"shape","id":"sh/6dk7ut8f","slide":7,"name":"分隔线","bbox":[860,407,345,2]}
 {"kind":"textbox","id":"sh/reto3yp0","slide":7,"name":"指标2","text":"公网可体验 MVP","textPreview":"公网可体验 MVP","textChars":9,"textLines":1,"bbox":[860,430,345,75]}
 {"kind":"textbox","id":"sh/kb2psjq9","slide":7,"name":"补充","text":"另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。","textPreview":"另有 2 条本地浏览器流程、1 条公网浏览器流程。上述为开发验证结果，不是用户数或收入。","textChars":44,"textLines":1,"bbox":[60,576,1140,65]}
-{"kind":"notes","id":"nt/ld9h87","slide":7,"text":"所有数量为 2026-09-12 开发记录，提交前应重新运行验证。\n\n[Sources]\n项目源码：src/data/pois.ts；tests/；README.md\n项目验证记录：docs/demo-checklist.md\n在线体验：https://nanxi-smart-travel.netlify.app\n[/Sources]"}
+{"kind":"notes","id":"nt/ld9h87","slide":7,"text":"所有数量为 2026-09-12 开发记录，提交前应重新运行验证。\n\n[Sources]\n项目源码：src/data/pois.ts；tests/；README.md\n项目验证记录：docs/demo-checklist.md\n在线体验：https://naxi-travel-ai.netlify.app\n[/Sources]"}
 {"kind":"slide","id":"sl/jepkva","slide":8,"title":"楠溪智游  /  赛道一 · 命题二","textShapes":13}
 {"kind":"textbox","id":"sh/xovyx8ra","slide":8,"name":"页眉","text":"楠溪智游  /  赛道一 · 命题二","textPreview":"楠溪智游  /  赛道一 · 命题二","textChars":18,"textLines":1,"bbox":[60,30,700,25]}
 {"kind":"textbox","id":"sh/al4zmd8z","slide":8,"name":"页码","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1180,30,40,25]}
@@ -128,6 +128,6 @@
 {"kind":"textbox","id":"sh/3mh8natw","slide":9,"name":"收束","text":"让楠溪江行程，真正跟得上变化。","textPreview":"让楠溪江行程，真正跟得上变化。","textChars":15,"textLines":1,"bbox":[60,150,1140,185]}
 {"kind":"shape","id":"sh/onq9gfah","slide":9,"name":"分隔线","bbox":[60,396,1120,2]}
 {"kind":"textbox","id":"sh/pozqpkb2","slide":9,"name":"呼吁","text":"寻找真实游客与文旅场景试点，验证行程可执行性。","textPreview":"寻找真实游客与文旅场景试点，验证行程可执行性。","textChars":23,"textLines":1,"bbox":[60,431,1090,90]}
-{"kind":"textbox","id":"sh/ehoralsf","slide":9,"name":"网址","text":"nanxi-smart-travel.netlify.app","textPreview":"nanxi-smart-travel.netlify.app","textChars":30,"textLines":1,"bbox":[60,585,900,54]}
+{"kind":"textbox","id":"sh/ehoralsf","slide":9,"name":"网址","text":"naxi-travel-ai.netlify.app","textPreview":"naxi-travel-ai.netlify.app","textChars":30,"textLines":1,"bbox":[60,585,900,54]}
 {"kind":"textbox","id":"sh/fix8jqt0","slide":9,"name":"赛道","text":"赛道一 · 命题二 · 楠溪智游","textPreview":"赛道一 · 命题二 · 楠溪智游","textChars":16,"textLines":1,"bbox":[60,650,600,30]}
-{"kind":"notes","id":"nt/7p6u5d","slide":9,"text":"结束时打开网址交给评委体验。\n\n[Sources]\n在线作品：https://nanxi-smart-travel.netlify.app\n大赛赛道说明：https://www.kdocs.cn/l/crAjwHTDW2VE\n[/Sources]"}
+{"kind":"notes","id":"nt/7p6u5d","slide":9,"text":"结束时打开网址交给评委体验。\n\n[Sources]\n在线作品：https://naxi-travel-ai.netlify.app\n大赛赛道说明：https://www.kdocs.cn/l/crAjwHTDW2VE\n[/Sources]"}

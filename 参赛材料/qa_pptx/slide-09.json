@@ -233,8 +233,8 @@
         54
       ],
       "geometry": "rect",
-      "text": "nanxi-smart-travel.netlify.app",
-      "textPreview": "nanxi-smart-travel.netlify.app",
+      "text": "naxi-travel-ai.netlify.app",
+      "textPreview": "naxi-travel-ai.netlify.app",
       "resolvedFontSize": 30,
       "resolvedTextStyle": {
         "anchor": 2,
@@ -258,14 +258,14 @@
         "lines": [
           {
             "index": 1,
-            "text": "nanxi-smart-travel.netlify.app"
+            "text": "naxi-travel-ai.netlify.app"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "nanxi-smart-travel.netlify.app",
+          "text": "naxi-travel-ai.netlify.app",
           "resolvedTextStyle": {
             "fontSize": 30,
             "typeface": "Microsoft YaHei",
@@ -275,7 +275,7 @@
           "runs": [
             {
               "index": 1,
-              "text": "nanxi-smart-travel.netlify.app",
+              "text": "naxi-travel-ai.netlify.app",
               "fontSize": 30,
               "typeface": "Microsoft YaHei",
               "color": "#152C2B",

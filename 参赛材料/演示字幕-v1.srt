@@ -59,4 +59,4 @@ AI 先解析旅行约束，再查询天气、筛选永嘉点位。
 13
 00:02:50,000 --> 00:03:00,000
 楠溪智游：让楠溪江行程，真正跟得上变化。
-nanxi-smart-travel.netlify.app
+naxi-travel-ai.netlify.app
