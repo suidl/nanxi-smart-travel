@@ -40,4 +40,4 @@ npm run e2e
 
 ## 当前范围
 
-已完成可公开访问的在线 MVP，包括实时天气代理、脱敏云端分享、AI 约束解析接口及本地规则容错。Netlify AI Features 已启用，线上行程理解由 AI Gateway 调用 `gpt-5.4-mini`；模型服务异常时才会明确回退为本地规则解析。
+已完成可公开访问的在线 MVP，包括实时天气代理、脱敏云端分享、AI 约束解析接口及本地规则容错。Netlify AI Features 已启用，线上行程理解由 AI Gateway 调用 DeepSeek 模型 `deepseek-flash`；模型服务异常时才会明确回退为本地规则解析。

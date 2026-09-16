@@ -25,7 +25,9 @@ export function getRuntimeEnvironment(
 
 export function resolveGatewayEnvironment(getEnvironment: PlanDependencies['getEnvironment']) {
   return {
-    apiKey: getEnvironment('OPENAI_API_KEY') ?? getEnvironment('NETLIFY_AI_GATEWAY_KEY'),
+    apiKey: getEnvironment('YONGJIA')
+      ?? getEnvironment('OPENAI_API_KEY')
+      ?? getEnvironment('NETLIFY_AI_GATEWAY_KEY'),
     baseURL: getEnvironment('OPENAI_BASE_URL')
       ?? getEnvironment('NETLIFY_AI_GATEWAY_BASE_URL')
       ?? getEnvironment('NETLIFY_AI_GATEWAY_URL'),
@@ -56,7 +58,7 @@ export function createPlanHandler(dependencies: PlanDependencies) {
     if (!apiKey || !baseURL) {
       return Response.json({ error: { code: 'MODEL_NOT_CONFIGURED', message: 'AI Gateway 尚未启用' } }, { status: 503 })
     }
-    const model = dependencies.getEnvironment('AI_MODEL') ?? 'gpt-5.4-mini'
+    const model = dependencies.getEnvironment('AI_MODEL') ?? 'deepseek-flash'
     try {
       const interpretation = await dependencies.interpret(input, { apiKey, baseURL, model })
       const merged = mergeModelInterpretation(input, interpretation)
@@ -71,31 +73,29 @@ const handler = createPlanHandler({
   getEnvironment: getRuntimeEnvironment,
   interpret: async (request, config) => {
     const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL })
-    const response = await client.responses.create({
-      model: config.model,
-      store: false,
-      instructions: '你是楠溪江行程约束解析器。只提炼用户偏好、步行强度、饮食需求并写一句摘要，不生成景点、价格、路线或未经提供的事实。preferences 只能从山水、古村、美食、亲子、文化中选择；“小吃”归为美食，“少走路”归为 low。优先理解 notes 中的新需求。',
-      input: JSON.stringify(request),
-      max_output_tokens: 500,
-      text: {
-        format: {
-          type: 'json_schema',
-          name: 'trip_interpretation',
-          strict: true,
-          schema: {
-            type: 'object', additionalProperties: false,
-            properties: {
-              preferences: { type: 'array', minItems: 1, maxItems: 5, items: { type: 'string', enum: ['山水', '古村', '美食', '亲子', '文化'] } },
-              walkingLevel: { type: 'string', enum: ['low', 'medium', 'high'] },
-              dietaryNeeds: { type: 'string' },
-              summary: { type: 'string', maxLength: 80 },
-            },
-            required: ['preferences', 'walkingLevel', 'dietaryNeeds', 'summary'],
-          },
-        },
+    const schema = {
+      type: 'object', additionalProperties: false,
+      properties: {
+        preferences: { type: 'array', minItems: 1, maxItems: 5, items: { type: 'string', enum: ['山水', '古村', '美食', '亲子', '文化'] } },
+        walkingLevel: { type: 'string', enum: ['low', 'medium', 'high'] },
+        dietaryNeeds: { type: 'string' },
+        summary: { type: 'string', maxLength: 80 },
       },
+      required: ['preferences', 'walkingLevel', 'dietaryNeeds', 'summary'],
+    }
+    const response = await client.chat.completions.create({
+      model: config.model,
+      messages: [
+        {
+          role: 'system',
+          content: `你是楠溪江行程约束解析器。只提炼用户偏好、步行强度、饮食需求并写一句摘要，不生成景点、价格、路线或未经提供的事实。preferences 只能从山水、古村、美食、亲子、文化中选择；“小吃”归为美食，“少走路”归为 low。优先理解 notes 中的新需求。\n\n请严格按以下 JSON Schema 输出纯 JSON，不要输出任何额外文字或 markdown 代码块标记：\n${JSON.stringify(schema)}`,
+        },
+        { role: 'user', content: JSON.stringify(request) },
+      ],
+      max_tokens: 500,
+      response_format: { type: 'json_object' },
     })
-    return JSON.parse(response.output_text) as ModelInterpretation
+    return JSON.parse(response.choices[0]?.message.content ?? '{}') as ModelInterpretation
   },
 })
 
