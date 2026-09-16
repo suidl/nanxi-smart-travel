@@ -13,7 +13,7 @@ export function AppShell({ children, active, onNavigate }: AppShellProps) {
     <div className="app-shell">
       <header className="topbar">
         <div className="brand"><span className="brand-mark">溪</span><span>楠溪智游</span></div>
-        <div className="topbar-meta"><span className="live-dot" /> 永嘉公开数据 · 在线体验版</div>
+        <div className="topbar-meta"><span className="live-dot" />永嘉农商杯人工智能体-楠溪智游-在线体验版</div>
       </header>
       <div className="app-frame">
         <nav className="sidebar" aria-label="主导航">
