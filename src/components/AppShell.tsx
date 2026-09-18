@@ -4,8 +4,8 @@ import { POIS } from '../data/pois'
 
 interface AppShellProps {
   children: ReactNode
-  active: 'create' | 'cockpit'
-  onNavigate: (target: 'create' | 'cockpit') => void
+  active: 'create' | 'cockpit' | 'trips' | 'atlas'
+  onNavigate: (target: 'create' | 'cockpit' | 'trips' | 'atlas') => void
 }
 
 export function AppShell({ children, active, onNavigate }: AppShellProps) {
@@ -23,8 +23,12 @@ export function AppShell({ children, active, onNavigate }: AppShellProps) {
           <button className={active === 'cockpit' ? 'nav-item active' : 'nav-item'} onClick={() => onNavigate('cockpit')}>
             <Compass size={18} /> <span>行程驾驶舱</span>
           </button>
-          <button className="nav-item" disabled><Map size={18} /> <span>我的行程</span></button>
-          <button className="nav-item" disabled><BookOpen size={18} /> <span>文化图鉴</span></button>
+          <button className={active === 'trips' ? 'nav-item active' : 'nav-item'} onClick={() => onNavigate('trips')}>
+            <Map size={18} /> <span>我的行程</span>
+          </button>
+          <button className={active === 'atlas' ? 'nav-item active' : 'nav-item'} onClick={() => onNavigate('atlas')}>
+            <BookOpen size={18} /> <span>文化图鉴</span>
+          </button>
           <div className="sidebar-foot">
             <span className="data-count">{POIS.length}</span>
             <span>条本地数据<br />均带来源</span>

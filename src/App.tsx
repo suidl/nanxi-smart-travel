@@ -4,6 +4,8 @@ import { replanTrip } from './agent/replanner'
 import { AppShell } from './components/AppShell'
 import { JourneyCockpit } from './components/JourneyCockpit'
 import { TripBuilder } from './components/TripBuilder'
+import { MyTrips } from './components/MyTrips'
+import { CulturalAtlas } from './components/CulturalAtlas'
 import { POIS } from './data/pois'
 import { DemoWeatherProvider } from './demo/demo-adapters'
 import type { PlanResult, ReplanEvent, TripRequest, WeatherSnapshot } from './domain/types'
@@ -12,8 +14,10 @@ import { ApiWeatherProvider, ResilientWeatherProvider, interpretTripRequest, loa
 import { loadSavedPlan, savePlan } from './services/storage'
 import './styles/app.css'
 
+type View = 'create' | 'cockpit' | 'trips' | 'atlas'
+
 export function App() {
-  const [view, setView] = useState<'create' | 'cockpit'>('create')
+  const [view, setView] = useState<View>('create')
   const [plan, setPlan] = useState<PlanResult>()
   const [isPlanning, setIsPlanning] = useState(false)
 
@@ -105,10 +109,22 @@ export function App() {
   }
 
   return (
-    <AppShell active={view} onNavigate={(target) => setView(target === 'cockpit' && !plan ? 'create' : target)}>
-      {view === 'create' || !plan
-        ? <TripBuilder onSubmit={(request) => createPlan(request)} isPlanning={isPlanning} />
-        : <JourneyCockpit plan={plan} onReplan={handleReplan} onRestart={() => setView('create')} onGenerateFromPrompt={generateFromPrompt} isPlanning={isPlanning} />}
+    <AppShell
+      active={view}
+      onNavigate={(target) => {
+        if (target === 'cockpit' && !plan) { setView('create'); return }
+        setView(target)
+      }}
+    >
+      {view === 'trips' && (
+        <MyTrips onOpen={(p) => { setPlan(p); setView('cockpit') }} onRestart={() => setView('create')} />
+      )}
+      {view === 'atlas' && <CulturalAtlas />}
+      {(view === 'create' || view === 'cockpit') && (
+        view === 'create' || !plan
+          ? <TripBuilder onSubmit={(request) => createPlan(request)} isPlanning={isPlanning} />
+          : <JourneyCockpit plan={plan} onReplan={handleReplan} onRestart={() => setView('create')} onGenerateFromPrompt={generateFromPrompt} isPlanning={isPlanning} />
+      )}
     </AppShell>
   )
 }
