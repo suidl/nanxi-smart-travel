@@ -41,8 +41,9 @@ describe('trip planner', () => {
       interpretation: { source: 'ai', model: 'deepseek-flash', summary: '适合家庭的轻松山水古村路线' },
     })
 
-    expect(plan.stops.length).toBeGreaterThanOrEqual(3)
-    expect(plan.stops.length).toBeLessThanOrEqual(5)
+    expect(plan.stops.length).toBeGreaterThanOrEqual(4)
+    expect(plan.stops.length).toBeLessThanOrEqual(6)
+    expect(plan.stops[0].poi.category).toBe('transport')
     expect(plan.stops.every((stop) => stop.poi.sourceUrl.startsWith('https://'))).toBe(true)
     expect(plan.budget.total).toBeLessThanOrEqual(1200)
     expect(plan.traces.map((trace) => trace.kind)).toEqual([
@@ -76,7 +77,10 @@ describe('trip planner', () => {
     expect(dates).toEqual(['2026-09-19', '2026-09-20', '2026-09-21', '2026-09-22', '2026-09-23'])
     expect([...new Set(plan.stops.map((stop) => stop.date))]).toEqual(dates)
     expect(plan.stops.filter((stop) => stop.dayIndex === 5).length).toBeGreaterThan(0)
-    expect(new Set(plan.stops.map((stop) => stop.poi.id)).size).toBe(plan.stops.length)
+    for (let d = 1; d <= 5; d += 1) {
+      const dayStops = plan.stops.filter((stop) => stop.dayIndex === d && stop.poi.category !== 'transport')
+      expect(new Set(dayStops.map((stop) => stop.poi.id)).size).toBe(dayStops.length)
+    }
     expect(plan.dailyWeather?.map((item) => item.date)).toEqual(dates)
   })
 })

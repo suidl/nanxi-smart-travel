@@ -57,7 +57,7 @@ export function TripBuilder({ onSubmit, isPlanning }: TripBuilderProps) {
           <span className="demo-tag">评委示例已填充</span>
         </div>
 
-        <label className="field full"><span><MapPin size={15} /> 出发地</span><input value={request.start} onChange={(event) => update('start', event.target.value)} /></label>
+        <label className="field full"><span><MapPin size={15} /> 出发地</span><input list="start-suggestions" value={request.start} onChange={(event) => update('start', event.target.value)} placeholder="如：温州南站、永嘉站" /><datalist id="start-suggestions"><option value="温州南站" /><option value="永嘉站" /></datalist><small className="field-hint">建议选择永嘉交通节点；其他地点将以温州南站为起点规划。</small></label>
         <div className="field-grid">
           <label className="field"><span><CalendarDays size={15} /> 出行日期</span><input type="date" value={request.date} onChange={(event) => update('date', event.target.value)} /></label>
           <label className="field"><span>行程天数 · 1–5 天</span><input aria-label="行程天数" type="number" min="1" max="5" step="1" value={request.days} onChange={(event) => update('days', Number(event.target.value))} /></label>

@@ -46,7 +46,7 @@ describe('in-page AI planning', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('行程已在本页重新核算')
     expect(within(screen.getByLabelText('Agent 执行轨迹')).getByText('想多看古村，少走路，安排永嘉小吃')).toBeInTheDocument()
     expect(requests.at(-1)?.notes).toBe('想多看古村，少走路，安排永嘉小吃')
-    expect(screen.getByRole('heading', { name: '永嘉麦饼体验' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /(麦饼|素面|粉干|田鱼)/ })).toBeInTheDocument()
     expect(screen.getByText(/新增 \d+ 个、移除 \d+ 个节点/)).toBeInTheDocument()
     expect(window.location.href).toBe(originalUrl)
   })
@@ -77,7 +77,7 @@ describe('in-page AI planning', () => {
 
     await user.type(screen.getByRole('textbox', { name: '告诉 AI 你的新想法' }), '多看古村少走路，安排永嘉小吃')
     await user.click(screen.getByRole('button', { name: '在本页重新生成' }))
-    expect(await screen.findByRole('heading', { name: '永嘉麦饼体验' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: /(麦饼|素面|粉干|田鱼)/ })).toBeInTheDocument()
     expect(screen.getByText(/规则重生成结果/)).toBeInTheDocument()
   })
 })

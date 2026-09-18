@@ -25,16 +25,33 @@ function openingMinute(poi: Poi): number | null {
   return hours * 60 + minutes
 }
 
-export function buildStops(ordered: Poi[], totalTravelMinutes: number, startMinute = 9 * 60, dayIndex = 1, date?: string): ItineraryStop[] {
+export function buildStops(ordered: Poi[], totalTravelMinutes: number, startMinute = 9 * 60, dayIndex = 1, date?: string, startPoi?: Poi): ItineraryStop[] {
   const travelPerStop = Math.max(12, Math.round(totalTravelMinutes / Math.max(ordered.length, 1)))
   let cursor = startMinute
-  return ordered.map((poi, index) => {
-    cursor += index === 0 ? travelPerStop : travelPerStop
+  const stops: ItineraryStop[] = []
+
+  if (startPoi) {
+    stops.push({
+      id: `stop-${dayIndex}-0-${startPoi.id}`,
+      dayIndex,
+      date,
+      poi: startPoi,
+      startTime: minutesToTime(cursor),
+      endTime: minutesToTime(cursor),
+      travelMinutes: 0,
+      estimatedCost: 0,
+      completed: false,
+      note: '出发集合点',
+    })
+  }
+
+  ordered.forEach((poi, index) => {
+    cursor += travelPerStop
     const opensAt = openingMinute(poi)
     if (opensAt !== null && cursor < opensAt) cursor = opensAt
     const startTime = minutesToTime(cursor)
     cursor += poi.durationMinutes
-    return {
+    stops.push({
       id: `stop-${dayIndex}-${index + 1}-${poi.id}`,
       dayIndex,
       date,
@@ -45,8 +62,9 @@ export function buildStops(ordered: Poi[], totalTravelMinutes: number, startMinu
       estimatedCost: poi.costPerPerson ?? 0,
       completed: false,
       note: poi.openingHours ? '开放信息已校验' : '开放信息需出发前复核',
-    }
+    })
   })
+  return stops
 }
 
 function dateForDay(startDate: string, dayIndex: number): string {
@@ -73,9 +91,12 @@ export async function planTrip(
 
   const now = dependencies.now?.() ?? new Date()
   const normalized = normalizeTripRequest(request)
-  const start = dependencies.pois.find((poi) => poi.name === normalized.start)
+  const exactStart = dependencies.pois.find((poi) => poi.name === normalized.start)
+  const start = exactStart
+    ?? dependencies.pois.find((poi) => poi.name.includes(normalized.start) || normalized.start.includes(poi.name))
     ?? dependencies.pois.find((poi) => poi.category === 'transport')
   if (!start) throw new Error('未找到可用的出发节点')
+  const startFallback = !exactStart && start.name !== normalized.start
 
   const usedIds = new Set<string>()
   const stops: ItineraryStop[] = []
@@ -87,7 +108,7 @@ export async function planTrip(
     const date = dateForDay(normalized.date, dayIndex)
     const weather = await dependencies.weatherProvider.getForecast(date, dayStart.latitude, dayStart.longitude)
     dailyWeather.push(weather)
-    const candidates = searchPois(normalized, dependencies.pois, weather)
+    const candidates = searchPois(normalized, dependencies.pois, weather, dayStart)
       .filter((poi) => poi.category !== 'transport' && !usedIds.has(poi.id))
     const nonFood = candidates.filter((poi) => poi.category !== 'food')
     const remainingDays = normalized.days - dayIndex + 1
@@ -107,7 +128,7 @@ export async function planTrip(
     ordered.forEach((poi) => usedIds.add(poi.id))
     const dailyRoute = estimateOrderedRoute(dayStart, ordered)
     dailyRoutes.push(dailyRoute)
-    stops.push(...buildStops(ordered, dailyRoute.totalTravelMinutes, 9 * 60, dayIndex, date))
+    stops.push(...buildStops(ordered, dailyRoute.totalTravelMinutes, 9 * 60, dayIndex, date, dayStart))
     dayStart = ordered.at(-1)!
   }
 
@@ -130,6 +151,11 @@ export async function planTrip(
     trace('validation', '检查可执行性', '开放时间、体力、天气与预算', validationIssues.length === 0 ? '全部校验通过' : `发现 ${validationIssues.length} 项风险`),
   ] satisfies ToolTrace[]
 
+  const baseInterpretation = dependencies.interpretation
+  const interpretation = startFallback && baseInterpretation
+    ? { ...baseInterpretation, summary: `${baseInterpretation.summary}（出发地"${normalized.start}"不在永嘉交通节点内，已以${start.name}为起点）` }
+    : baseInterpretation
+
   return {
     id: `trip-${now.getTime()}`,
     request: normalized,
@@ -141,6 +167,6 @@ export async function planTrip(
     traces,
     validationIssues,
     generatedAt: now.toISOString(),
-    interpretation: dependencies.interpretation,
+    interpretation,
   }
 }

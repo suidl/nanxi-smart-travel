@@ -28,11 +28,15 @@ export function JourneyCockpit({ plan, onReplan, onRestart, onGenerateFromPrompt
   const changedRoute = newPoiIds.length > 0 || removedPoiIds.length > 0
   const dateLabel = (date: string) => `${Number(date.slice(5, 7))}月${Number(date.slice(8, 10))}日`
   const visibleIssues = plan.validationIssues.filter((issue) => !issue.poiId || dayStops.some((stop) => stop.poi.id === issue.poiId))
+  const firstStop = dayStops[0]
+  const actualStartNote = firstStop?.poi.category === 'transport' && firstStop.poi.name !== plan.request.start
+    ? `（实际以 ${firstStop.poi.name} 为起点）`
+    : ''
   return (
     <div className="cockpit-page">
       <main className="cockpit-main">
         <div className="cockpit-heading">
-          <div><span className="eyebrow"><CloudSun size={14} /> {dayWeather.source === 'demo' ? '演示天气' : dayWeather.source === 'cache' ? '缓存天气' : '实时天气'} · {dayWeather.temperatureMin}–{dayWeather.temperatureMax}℃</span><h1>{plan.request.days === 1 ? '楠溪江山水人文一日线' : `楠溪江山水人文 ${plan.request.days} 日行程`}</h1><p>{plan.request.partySize} 人同行 · 从 {plan.request.start} 出发 · 生成于 {new Date(plan.generatedAt).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}</p><span className={plan.interpretation?.source === 'ai' ? 'source-badge ai' : 'source-badge'}>{plan.interpretation?.source === 'ai' ? `AI 约束解析 · ${plan.interpretation.model}` : '规则演示解析'}</span></div>
+          <div><span className="eyebrow"><CloudSun size={14} /> {dayWeather.source === 'demo' ? '演示天气' : dayWeather.source === 'cache' ? '缓存天气' : '实时天气'} · {dayWeather.temperatureMin}–{dayWeather.temperatureMax}℃</span><h1>{plan.request.days === 1 ? '楠溪江山水人文一日线' : `楠溪江山水人文 ${plan.request.days} 日行程`}</h1><p>{plan.request.partySize} 人同行 · 从 {plan.request.start} 出发{actualStartNote} · 生成于 {new Date(plan.generatedAt).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}</p><span className={plan.interpretation?.source === 'ai' ? 'source-badge ai' : 'source-badge'}>{plan.interpretation?.source === 'ai' ? `AI 约束解析 · ${plan.interpretation.model}` : '规则演示解析'}</span></div>
           <button className="icon-action" aria-label="重新创建行程" onClick={onRestart}><RotateCcw size={17} /></button>
         </div>
 
