@@ -14,14 +14,14 @@ describe('Netlify API client', () => {
   it('returns a validated AI interpretation', async () => {
     const fetchImpl = vi.fn(async () => new Response(JSON.stringify({
       request: { ...request, preferences: ['山水', '美食'] },
-      source: 'ai', model: 'gpt-5.4-mini', summary: '轻松的山水美食路线',
+      source: 'ai', model: 'deepseek-flash', summary: '轻松的山水美食路线',
     }), { status: 200, headers: { 'content-type': 'application/json' } }))
 
     const result = await interpretTripRequest(request, { fetchImpl })
 
     expect(result).toEqual({
       request: { ...request, preferences: ['山水', '美食'] },
-      source: 'ai', model: 'gpt-5.4-mini', summary: '轻松的山水美食路线',
+      source: 'ai', model: 'deepseek-flash', summary: '轻松的山水美食路线',
     })
   })
 

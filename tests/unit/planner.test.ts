@@ -38,7 +38,7 @@ describe('trip planner', () => {
       pois: POIS,
       weatherProvider,
       now: () => new Date('2026-09-12T10:00:00.000Z'),
-      interpretation: { source: 'ai', model: 'gpt-5.4-mini', summary: '适合家庭的轻松山水古村路线' },
+      interpretation: { source: 'ai', model: 'deepseek-flash', summary: '适合家庭的轻松山水古村路线' },
     })
 
     expect(plan.stops.length).toBeGreaterThanOrEqual(3)
@@ -49,7 +49,7 @@ describe('trip planner', () => {
       'constraints', 'weather', 'poi_search', 'route', 'budget', 'validation',
     ])
     expect(plan.validationIssues).toEqual([])
-    expect(plan.interpretation).toEqual({ source: 'ai', model: 'gpt-5.4-mini', summary: '适合家庭的轻松山水古村路线' })
+    expect(plan.interpretation).toEqual({ source: 'ai', model: 'deepseek-flash', summary: '适合家庭的轻松山水古村路线' })
     expect(plan.traces[0].resultSummary).toContain('适合家庭的轻松山水古村路线')
   })
 

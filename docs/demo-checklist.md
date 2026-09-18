@@ -19,4 +19,4 @@
 - [x] Open-Meteo 线上实测返回 `live`，Netlify Blobs 分享写入、读取和脱敏通过。
 - [x] 390×844 浏览器视口无横向溢出，截图已保存。
 - [ ] 尚未在实体手机设备验证。
-- [x] AI 约束解析已通过 Netlify AI Gateway 接入；线上实测返回 `source: ai`，模型为 `gpt-5.4-mini`。
+- [x] AI 约束解析已通过 DeepSeek 官方接口接入；线上实测返回 `source: ai`，模型为 `deepseek-flash`。

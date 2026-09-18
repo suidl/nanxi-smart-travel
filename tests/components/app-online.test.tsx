@@ -19,7 +19,7 @@ describe('App online orchestration', () => {
           preferences: ['山水', '古村', '美食'], walkingLevel: 'low', dietaryNeeds: '',
           notes: '希望节奏轻松，午餐尝试永嘉小吃',
         },
-        source: 'ai', model: 'gpt-5.4-mini', summary: '适合家庭的轻松山水美食路线',
+        source: 'ai', model: 'deepseek-flash', summary: '适合家庭的轻松山水美食路线',
       }), { status: 200 })
       if (String(input).startsWith('/api/weather?')) return new Response(JSON.stringify({
         date: '2026-09-19', temperatureMin: 20, temperatureMax: 28,
@@ -34,7 +34,7 @@ describe('App online orchestration', () => {
 
     await user.click(screen.getByRole('button', { name: '生成行程' }))
 
-    expect(await screen.findByText('AI 约束解析 · gpt-5.4-mini')).toBeInTheDocument()
+    expect(await screen.findByText('AI 约束解析 · deepseek-flash')).toBeInTheDocument()
     expect(screen.getByText(/实时天气/)).toBeInTheDocument()
     expect(screen.getByText('适合家庭的轻松山水美食路线')).toBeInTheDocument()
   })

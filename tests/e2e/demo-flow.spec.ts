@@ -59,7 +59,7 @@ test('inline AI changes the visible route and supports a custom five-day trip', 
     const preferences = String(request.notes).includes('多看古村')
       ? ['古村', '美食', '山水']
       : request.preferences
-    await route.fulfill({ json: { request: { ...request, preferences }, source: 'ai', model: 'gpt-5.4-mini', summary: String(request.notes) } })
+    await route.fulfill({ json: { request: { ...request, preferences }, source: 'ai', model: 'deepseek-flash', summary: String(request.notes) } })
   })
   await page.route('**/api/weather?*', async (route) => {
     const date = new URL(route.request().url()).searchParams.get('date')

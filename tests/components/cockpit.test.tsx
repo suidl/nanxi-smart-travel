@@ -20,7 +20,7 @@ describe('JourneyCockpit', () => {
       weatherProvider: new DemoWeatherProvider(),
       now: () => new Date('2026-09-12T10:00:00.000Z'),
     })
-    plan.interpretation = { source: 'ai', model: 'gpt-5.4-mini', summary: '轻松家庭路线' }
+    plan.interpretation = { source: 'ai', model: 'deepseek-flash', summary: '轻松家庭路线' }
 
     render(<JourneyCockpit plan={plan} onReplan={() => undefined} onRestart={() => undefined} onGenerateFromPrompt={async () => undefined} isPlanning={false} />)
 
@@ -29,7 +29,7 @@ describe('JourneyCockpit', () => {
     expect(screen.getByLabelText('行程时间轴')).toBeInTheDocument()
     expect(screen.getAllByText(`¥${plan.budget.total}`)).toHaveLength(2)
     expect(screen.getAllByTestId('tool-trace')).toHaveLength(6)
-    expect(screen.getByText('AI 约束解析 · gpt-5.4-mini')).toBeInTheDocument()
+    expect(screen.getByText('AI 约束解析 · deepseek-flash')).toBeInTheDocument()
   })
 
   it('exposes the rain scenario as an explicitly labeled demo event', async () => {

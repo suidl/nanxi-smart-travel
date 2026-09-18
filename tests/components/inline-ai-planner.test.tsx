@@ -18,7 +18,7 @@ function stubOnlinePlanning(requests: Array<Record<string, unknown>>) {
       const interpreted = wantsVillageAndFood
         ? { ...request, preferences: ['古村', '美食', '山水'], walkingLevel: 'low' }
         : request
-      return new Response(JSON.stringify({ request: interpreted, source: 'ai', model: 'gpt-5.4-mini', summary: String(request.notes) }), { status: 200 })
+      return new Response(JSON.stringify({ request: interpreted, source: 'ai', model: 'deepseek-flash', summary: String(request.notes) }), { status: 200 })
     }
     if (String(input).startsWith('/api/weather?')) return new Response(JSON.stringify({
       date: new URL(String(input), 'http://localhost').searchParams.get('date'), temperatureMin: 20, temperatureMax: 28,
@@ -37,7 +37,7 @@ describe('in-page AI planning', () => {
     const user = userEvent.setup()
     render(<App />)
     await user.click(screen.getByRole('button', { name: '生成行程' }))
-    await screen.findByText('AI 约束解析 · gpt-5.4-mini')
+    await screen.findByText('AI 约束解析 · deepseek-flash')
     const originalUrl = window.location.href
 
     await user.type(screen.getByRole('textbox', { name: '告诉 AI 你的新想法' }), '想多看古村，少走路，安排永嘉小吃')
@@ -57,7 +57,7 @@ describe('in-page AI planning', () => {
     const user = userEvent.setup()
     render(<App />)
     await user.click(screen.getByRole('button', { name: '生成行程' }))
-    await screen.findByText('AI 约束解析 · gpt-5.4-mini')
+    await screen.findByText('AI 约束解析 · deepseek-flash')
 
     await user.type(screen.getByRole('textbox', { name: '告诉 AI 你的新想法' }), '给我规划一个楠溪江双人五日游')
     await user.click(screen.getByRole('button', { name: '在本页重新生成' }))

@@ -8,10 +8,10 @@
 
 ```bash
 npm install
-npm run dev
+npx netlify dev
 ```
 
-打开终端显示的本地地址。评委演示数据已预填，直接点击“生成行程”即可。
+打开 http://localhost:8888 （`netlify dev` 会同时启动前端与 Netlify Functions，并自动注入 `.env` 中的 `YONGJIA`、`YONGJIA_BASE_URL`、`AI_MODEL`；不要直接使用 `npm run dev`，该命令只启动前端，`/api/plan` 不可用会静默降级为本地演示解析）。评委演示数据已预填，直接点击“生成行程”即可。
 
 ## 固定演示流程
 
