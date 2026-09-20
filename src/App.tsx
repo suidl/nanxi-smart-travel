@@ -20,6 +20,7 @@ export function App() {
   const [view, setView] = useState<View>('create')
   const [plan, setPlan] = useState<PlanResult>()
   const [isPlanning, setIsPlanning] = useState(false)
+  const [lastRequest, setLastRequest] = useState<TripRequest>()
 
   useEffect(() => {
     const sharedId = new URLSearchParams(window.location.search).get('trip')
@@ -70,6 +71,7 @@ export function App() {
         }
       }
       setPlan(result)
+      setLastRequest(request)
       setView('cockpit')
     } finally {
       setIsPlanning(false)
@@ -122,7 +124,7 @@ export function App() {
       {view === 'atlas' && <CulturalAtlas />}
       {(view === 'create' || view === 'cockpit') && (
         view === 'create' || !plan
-          ? <TripBuilder onSubmit={(request) => createPlan(request)} isPlanning={isPlanning} />
+          ? <TripBuilder onSubmit={(request) => createPlan(request)} isPlanning={isPlanning} initialRequest={lastRequest} />
           : <JourneyCockpit plan={plan} onReplan={handleReplan} onRestart={() => setView('create')} onGenerateFromPrompt={generateFromPrompt} isPlanning={isPlanning} />
       )}
     </AppShell>

@@ -6,8 +6,13 @@
 
 ## 本地运行
 
+环境要求：Node.js >= 22.13.0（见 `package.json` 的 `engines` 字段）。
+
 ```bash
+# 1. 安装依赖
 npm install
+
+# 2. 启动本地开发环境（前端 + Netlify Functions）
 npx netlify dev
 ```
 
@@ -24,11 +29,24 @@ npx netlify dev
 ## 验证命令
 
 ```bash
+# 单元测试
 npm test
+
+# 类型检查 + 前端构建
 npm run build
+
+# 构建 Netlify Functions 到 .netlify/functions
 npm run build:functions
+
+# 端到端测试：首次运行前必须先下载 Playwright 浏览器内核
+npx playwright install
 npm run e2e
 ```
+
+> 提示：若跳过 `npx playwright install` 直接运行 `npm run e2e`，会报错
+> `browserType.launch: Executable doesn't exist ...chrome-headless-shell.exe`。
+> 该命令只需在首次安装或 Playwright 升级后执行一次。
+> 其中 `tests/e2e/online-deploy.spec.ts` 会访问线上生产站点，需保证公网地址可达。
 
 ## 数据与可信说明
 

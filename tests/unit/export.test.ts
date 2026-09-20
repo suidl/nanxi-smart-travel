@@ -32,8 +32,26 @@ describe('trip exports', () => {
 
     expect(lines.join('\n')).toContain('路线距离为估算')
     expect(lines.join('\n')).toContain('演示天气')
+    expect(lines.join('\n')).toContain(`预计支出 ¥${plan.budget.total}（预算上限 ¥${plan.request.budget}，含 10% 预留）`)
     expect(shareText).toContain('楠溪智游')
     expect(shareText).toContain(`预算 ¥${plan.budget.total}`)
+  })
+
+  it('prints per-stop amounts for the whole party so they match the budget breakdown', async () => {
+    const plan = await makePlan()
+    const lines = buildExportLines(plan).join('\n')
+    const calendar = buildCalendar(plan)
+    const priced = plan.stops.filter((stop) => stop.poi.costPerPerson)
+
+    expect(priced.length).toBeGreaterThan(0)
+    for (const stop of priced) {
+      const total = (stop.poi.costPerPerson ?? 0) * plan.request.partySize
+      expect(lines).toContain(`¥${stop.poi.costPerPerson}/人 × ${plan.request.partySize} 人 = ¥${total}`)
+    }
+    expect(lines).not.toContain('费用估算 ¥0')
+    const firstPriced = priced[0]
+    const firstTotal = (firstPriced.poi.costPerPerson ?? 0) * plan.request.partySize
+    expect(calendar).toContain(`费用估算 ¥${firstPriced.poi.costPerPerson}/人 × ${plan.request.partySize} 人 = ¥${firstTotal}`)
   })
 
   it('exports all five dates rather than putting every stop on the first day', async () => {

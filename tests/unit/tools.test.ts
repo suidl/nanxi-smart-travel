@@ -80,6 +80,21 @@ describe('travel planning tools', () => {
     expect(budget.food).toBe(400)
   })
 
+  it('counts a food stop once in the meal allowance instead of double-charging tickets', () => {
+    const foodPoi = POIS.find((poi) => poi.id === 'wheat-cake')!
+    const scenicPoi = POIS.find((poi) => poi.id === 'lishui')!
+    const stops: ItineraryStop[] = [foodPoi, scenicPoi].map((poi, index) => ({
+      id: `stop-${index}`, dayIndex: 1, date: '2026-09-19', poi,
+      startTime: '12:00', endTime: '13:00', travelMinutes: 20,
+      estimatedCost: poi.costPerPerson ?? 0, completed: false, note: '',
+    }))
+    const budget = calculateBudget(normalizeTripRequest({ ...request, days: 1 }), stops)
+
+    // 门票只算丽水古街 15 元/人 × 4 人；麦饼 20 元/人 只计入餐饮额度，不重复计入门票。
+    expect(budget.tickets).toBe(60)
+    expect(budget.food).toBe(200)
+  })
+
   it('reports opening-hour conflicts and walking-level mismatches', () => {
     const highWalkingPoi = POIS.find((poi) => poi.walkingLevel === 'high')!
     const stop: ItineraryStop = {

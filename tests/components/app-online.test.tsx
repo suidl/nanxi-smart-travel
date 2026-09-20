@@ -38,4 +38,25 @@ describe('App online orchestration', () => {
     expect(screen.getByText(/实时天气/)).toBeInTheDocument()
     expect(screen.getByText('适合家庭的轻松山水美食路线')).toBeInTheDocument()
   })
+
+  it('restores the submitted party size when returning to the builder after planning', async () => {
+    vi.stubGlobal('fetch', async () => { throw new Error('offline') })
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.clear(screen.getByRole('spinbutton', { name: '儿童' }))
+    await user.type(screen.getByRole('spinbutton', { name: '儿童' }), '0')
+    await user.clear(screen.getByRole('spinbutton', { name: '老人' }))
+    await user.type(screen.getByRole('spinbutton', { name: '老人' }), '2')
+    await user.click(screen.getByRole('button', { name: '生成行程' }))
+
+    expect(await screen.findByText('规则演示解析')).toBeInTheDocument()
+    expect(screen.getByText(/3 人同行/)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: '重新创建行程' }))
+
+    expect(screen.getByRole('spinbutton', { name: '成人' })).toHaveValue(1)
+    expect(screen.getByRole('spinbutton', { name: '儿童' })).toHaveValue(0)
+    expect(screen.getByRole('spinbutton', { name: '老人' })).toHaveValue(2)
+  })
 })

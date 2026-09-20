@@ -40,6 +40,17 @@ function requestedPreferencesFromPrompt(prompt: string): string[] {
 }
 
 /**
+ * 从自然语言 prompt 中提取明确给出的总预算。
+ * 支持："预算 6000"、"预算6000元"、"预算是 ¥6000" 等写法。
+ */
+function requestedBudgetFromPrompt(prompt: string): number | undefined {
+  const match = /预算\s*[:：]?\s*(?:是|为|约|大概|大约)?\s*[¥￥]?\s*(\d+)/.exec(prompt)
+  if (!match) return undefined
+  const budget = Number(match[1])
+  return budget > 0 ? budget : undefined
+}
+
+/**
  * 从自然语言 prompt 中识别步行强度。
  */
 function requestedWalkingLevelFromPrompt(prompt: string): WalkingLevel | undefined {
@@ -77,8 +88,8 @@ function requestedPeopleFromPrompt(prompt: string): PeopleOverride | undefined {
     }
   }
 
-  // "双人" / "三人" / "X人" → 均视为成人
-  const groupMatch = /([一二两双三四五六七八九十\d]+)\s*人/.exec(prompt)
+  // "双人" / "三人" / "X人" / "X个人" → 均视为成人
+  const groupMatch = /([一二两双三四五六七八九十\d]+)\s*(?:位|个)?\s*人/.exec(prompt)
   if (groupMatch) {
     const adults = parseNumber(groupMatch[1])
     if (adults !== undefined) return { adults, children: 0, seniors: 0 }
@@ -90,13 +101,15 @@ function requestedPeopleFromPrompt(prompt: string): PeopleOverride | undefined {
 /**
  * 基于已有 TripRequest 和一句自然语言 prompt，派生新的行程请求。
  * prompt 会作为 notes 透传给 AI 约束解析器；
- * 若 prompt 中明确提到天数 / 人数 / 偏好 / 步行强度，则覆盖对应字段，并按天比例重算预算。
+ * 若 prompt 中明确提到天数 / 人数 / 预算 / 偏好 / 步行强度，则覆盖对应字段；
+ * 未提及预算时按天比例重算预算。
  */
 export function deriveRequestFromPrompt(base: TripRequest, prompt: string): TripRequest {
   const days = requestedDaysFromPrompt(prompt) ?? base.days
   const people = requestedPeopleFromPrompt(prompt)
   const promptPreferences = requestedPreferencesFromPrompt(prompt)
   const walkingLevel = requestedWalkingLevelFromPrompt(prompt) ?? base.walkingLevel
+  const explicitBudget = requestedBudgetFromPrompt(prompt)
   const budgetPerDay = Math.max(200, Math.round(base.budget / Math.max(1, base.days)))
 
   const preferences = [...new Set([...base.preferences, ...promptPreferences])]
@@ -107,7 +120,7 @@ export function deriveRequestFromPrompt(base: TripRequest, prompt: string): Trip
     adults: people?.adults ?? base.adults,
     children: people?.children ?? base.children,
     seniors: people?.seniors ?? base.seniors,
-    budget: days * budgetPerDay,
+    budget: explicitBudget ?? days * budgetPerDay,
     preferences,
     walkingLevel,
     notes: prompt,
