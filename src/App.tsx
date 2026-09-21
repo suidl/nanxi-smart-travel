@@ -125,9 +125,9 @@ export function App() {
         setView(target)
       }}
     >
-      <div style={{display:'flex',justifyContent:'flex-end',padding:8}}>
-        <div style={{marginRight:12}}>已登录：{user.username}</div>
-        <button onClick={() => { authLogout(); setUser(null) }}>登出</button>
+      <div className="user-toolbar">
+        <div className="user-badge">已登录：{user.username}</div>
+        <button className="user-logout" onClick={() => { authLogout(); setUser(null) }}>登出</button>
       </div>
       {view === 'trips' && (
         <MyTrips onOpen={(p) => { setPlan(p); setView('cockpit') }} onRestart={() => setView('create')} />

@@ -26,7 +26,6 @@ export function RegisterForm({ onSuccess, onSwitch }: Props) {
 
   return (
     <form className="auth-form" onSubmit={submit}>
-      <h3>注册</h3>
       <label>用户名
         <input value={username} onChange={(e) => setUsername(e.target.value)} required />
       </label>
