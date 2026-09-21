@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { planTrip } from './agent/planner'
 import { replanTrip } from './agent/replanner'
 import { AppShell } from './components/AppShell'
+import { AuthScreen } from './components/AuthScreen'
+import { getCurrentUser, logout as authLogout } from './services/auth'
 import { JourneyCockpit } from './components/JourneyCockpit'
 import { TripBuilder } from './components/TripBuilder'
 import { MyTrips } from './components/MyTrips'
@@ -17,10 +19,10 @@ import './styles/app.css'
 type View = 'create' | 'cockpit' | 'trips' | 'atlas'
 
 export function App() {
+  const [user, setUser] = useState(() => getCurrentUser())
   const [view, setView] = useState<View>('create')
   const [plan, setPlan] = useState<PlanResult>()
   const [isPlanning, setIsPlanning] = useState(false)
-  const [lastRequest, setLastRequest] = useState<TripRequest>()
 
   useEffect(() => {
     const sharedId = new URLSearchParams(window.location.search).get('trip')
@@ -71,7 +73,6 @@ export function App() {
         }
       }
       setPlan(result)
-      setLastRequest(request)
       setView('cockpit')
     } finally {
       setIsPlanning(false)
@@ -110,6 +111,10 @@ export function App() {
     }, prompt), plan)
   }
 
+  if (!user) {
+    return <AuthScreen onAuth={() => setUser(getCurrentUser())} />
+  }
+
   return (
     <AppShell
       active={view}
@@ -118,13 +123,17 @@ export function App() {
         setView(target)
       }}
     >
+      <div className="user-toolbar">
+        <div className="user-badge">已登录：{user.username}</div>
+        <button className="user-logout" onClick={() => { authLogout(); setUser(null) }}>登出</button>
+      </div>
       {view === 'trips' && (
         <MyTrips onOpen={(p) => { setPlan(p); setView('cockpit') }} onRestart={() => setView('create')} />
       )}
       {view === 'atlas' && <CulturalAtlas />}
       {(view === 'create' || view === 'cockpit') && (
         view === 'create' || !plan
-          ? <TripBuilder onSubmit={(request) => createPlan(request)} isPlanning={isPlanning} initialRequest={lastRequest} />
+          ? <TripBuilder onSubmit={(request) => createPlan(request)} isPlanning={isPlanning} />
           : <JourneyCockpit plan={plan} onReplan={handleReplan} onRestart={() => setView('create')} onGenerateFromPrompt={generateFromPrompt} isPlanning={isPlanning} />
       )}
     </AppShell>

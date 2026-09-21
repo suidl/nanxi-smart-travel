@@ -6,9 +6,7 @@ export function calculateBudget(
 ): BudgetBreakdown {
   const travelMinutes = stops.reduce((sum, stop) => sum + stop.travelMinutes, 0)
   const transport = Math.round(160 + travelMinutes * 1.6)
-  // 门票只统计非餐饮点位，餐饮停点费用统一计入下方餐饮额度，避免重复计价。
-  const tickets = stops.filter((stop) => stop.poi.category !== 'food')
-    .reduce((sum, stop) => sum + (stop.poi.costPerPerson ?? 0) * request.partySize, 0)
+  const tickets = stops.reduce((sum, stop) => sum + (stop.poi.costPerPerson ?? 0) * request.partySize, 0)
   const food = Array.from({ length: request.days }, (_, index) => index + 1).reduce((sum, dayIndex) => {
     const meals = stops.filter((stop) => (stop.dayIndex ?? 1) === dayIndex && stop.poi.category === 'food')
     const plannedFood = meals.reduce((mealTotal, stop) => mealTotal + (stop.poi.costPerPerson ?? 0) * request.partySize, 0)

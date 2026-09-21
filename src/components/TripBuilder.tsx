@@ -4,16 +4,9 @@ import type { TripRequest, WalkingLevel } from '../domain/types'
 
 const START_OPTIONS = ['温州南站', '永嘉站'] as const
 
-function tomorrowDate(): string {
-  const date = new Date()
-  date.setDate(date.getDate() + 1)
-  const local = new Date(date.getTime() - date.getTimezoneOffset() * 60_000)
-  return local.toISOString().slice(0, 10)
-}
-
 const DEFAULT_REQUEST: TripRequest = {
   start: '温州南站',
-  date: tomorrowDate(),
+  date: '2026-09-19',
   days: 1,
   adults: 1,
   children: 1,
@@ -28,12 +21,10 @@ const DEFAULT_REQUEST: TripRequest = {
 interface TripBuilderProps {
   onSubmit: (request: TripRequest) => void | Promise<void>
   isPlanning: boolean
-  /** 上次生成行程时提交的条件，重新创建时回填，保证与生成结果一致。 */
-  initialRequest?: TripRequest
 }
 
-export function TripBuilder({ onSubmit, isPlanning, initialRequest }: TripBuilderProps) {
-  const [request, setRequest] = useState<TripRequest>(initialRequest ?? DEFAULT_REQUEST)
+export function TripBuilder({ onSubmit, isPlanning }: TripBuilderProps) {
+  const [request, setRequest] = useState(DEFAULT_REQUEST)
 
   function update<K extends keyof TripRequest>(key: K, value: TripRequest[K]) {
     setRequest((current) => ({ ...current, [key]: value }))
