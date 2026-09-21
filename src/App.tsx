@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { planTrip } from './agent/planner'
 import { replanTrip } from './agent/replanner'
 import { AppShell } from './components/AppShell'
+import { AuthScreen } from './components/AuthScreen'
+import { getCurrentUser, logout as authLogout } from './services/auth'
 import { JourneyCockpit } from './components/JourneyCockpit'
 import { TripBuilder } from './components/TripBuilder'
 import { MyTrips } from './components/MyTrips'
@@ -17,6 +19,7 @@ import './styles/app.css'
 type View = 'create' | 'cockpit' | 'trips' | 'atlas'
 
 export function App() {
+  const [user, setUser] = useState(() => getCurrentUser())
   const [view, setView] = useState<View>('create')
   const [plan, setPlan] = useState<PlanResult>()
   const [isPlanning, setIsPlanning] = useState(false)
@@ -110,6 +113,10 @@ export function App() {
     }, prompt), plan)
   }
 
+  if (!user) {
+    return <AuthScreen onAuth={() => setUser(getCurrentUser())} />
+  }
+
   return (
     <AppShell
       active={view}
@@ -118,6 +125,10 @@ export function App() {
         setView(target)
       }}
     >
+      <div style={{display:'flex',justifyContent:'flex-end',padding:8}}>
+        <div style={{marginRight:12}}>已登录：{user.username}</div>
+        <button onClick={() => { authLogout(); setUser(null) }}>登出</button>
+      </div>
       {view === 'trips' && (
         <MyTrips onOpen={(p) => { setPlan(p); setView('cockpit') }} onRestart={() => setView('create')} />
       )}

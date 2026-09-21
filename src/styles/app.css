@@ -245,3 +245,16 @@ fieldset legend { margin-bottom: 8px; color: var(--muted); font-size: 12px; font
   .trip-card-foot { flex-direction: column; }
   .trip-open { width: 100%; }
 }
+
+/* ===== Auth (login/register) ===== */
+.auth-screen { display: grid; place-items: center; padding: 48px 18px; }
+.auth-card { width: 420px; max-width: 94%; padding: 22px; border-radius: 12px; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 12px 36px rgba(30,60,38,.08); }
+.auth-form { display: grid; gap: 10px; }
+.auth-form h3 { margin: 0 0 6px; color: var(--green-950); }
+.auth-form label { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.auth-form input { height: 40px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; }
+.form-error { color: #9e3b2f; font-size: 13px; margin-top: 6px; }
+.form-actions { display: flex; gap: 8px; margin-top: 6px; }
+.form-actions button { padding: 9px 12px; border-radius: 9px; border: 0; cursor: pointer; }
+.form-actions button[type="submit"] { background: var(--green-800); color: white; }
+.form-actions button[type="button"] { background: transparent; border: 1px solid var(--line); }
