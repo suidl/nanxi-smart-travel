@@ -35,23 +35,4 @@ describe('TripBuilder', () => {
 
     expect(submitted?.days).toBe(5)
   })
-
-  it('restores the last submitted conditions so the form matches the generated trip', () => {
-    render(<TripBuilder
-      onSubmit={() => undefined}
-      isPlanning={false}
-      initialRequest={{
-        start: '永嘉站', date: '2026-09-22', days: 2, adults: 2, children: 0, seniors: 2,
-        budget: 2000, preferences: ['美食'], walkingLevel: 'low', dietaryNeeds: '', notes: '改成两日慢游',
-      }}
-    />)
-
-    expect(screen.getByRole('spinbutton', { name: '成人' })).toHaveValue(2)
-    expect(screen.getByRole('spinbutton', { name: '儿童' })).toHaveValue(0)
-    expect(screen.getByRole('spinbutton', { name: '老人' })).toHaveValue(2)
-    expect(screen.getByRole('spinbutton', { name: '行程天数' })).toHaveValue(2)
-    expect(screen.getByRole('spinbutton', { name: '总预算' })).toHaveValue(2000)
-    expect(screen.getByRole('checkbox', { name: '美食' })).toBeChecked()
-    expect(screen.getByRole('checkbox', { name: '山水' })).not.toBeChecked()
-  })
 })

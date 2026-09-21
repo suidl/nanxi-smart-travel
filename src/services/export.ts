@@ -1,16 +1,7 @@
-import type { ItineraryStop, PlanResult } from '../domain/types'
+import type { PlanResult } from '../domain/types'
 
 function escapeCalendar(value: string) {
   return value.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;')
-}
-
-/**
- * 停点费用文案：单价为每人价格，导出时按同行人数换算为合计，避免与预算拆分口径不一致。
- */
-function stopCostLabel(stop: ItineraryStop, partySize: number): string {
-  const perPerson = stop.poi.costPerPerson
-  if (stop.poi.category === 'transport' || !perPerson) return stop.note
-  return `${stop.note}｜费用估算 ¥${perPerson}/人 × ${partySize} 人 = ¥${perPerson * partySize}`
 }
 
 function calendarTime(date: string, time: string) {
@@ -24,7 +15,7 @@ export function buildCalendar(plan: PlanResult) {
     `DTSTART:${calendarTime(stop.date ?? plan.request.date, stop.startTime)}`,
     `DTEND:${calendarTime(stop.date ?? plan.request.date, stop.endTime)}`,
     `SUMMARY:${escapeCalendar(stop.poi.name)}`,
-    `DESCRIPTION:${escapeCalendar(`${stopCostLabel(stop, plan.request.partySize)}；来源：${stop.poi.sourceUrl}`)}`,
+    `DESCRIPTION:${escapeCalendar(`${stop.note}；费用估算 ¥${stop.estimatedCost}；来源：${stop.poi.sourceUrl}`)}`,
     'END:VEVENT',
   ].join('\r\n')).join('\r\n')
 
@@ -35,7 +26,7 @@ export function buildExportLines(plan: PlanResult) {
   const lines = [
     '楠溪智游 · 行程驾驶舱',
     `${plan.request.date} 起 ${plan.request.days} 天｜${plan.request.partySize} 人｜从 ${plan.request.start} 出发`,
-    `预计支出 ¥${plan.budget.total}（预算上限 ¥${plan.request.budget}，含 10% 预留）｜预计路程 ${plan.route.totalDistanceKm} km`,
+    `预算 ¥${plan.budget.total} / ¥${plan.request.budget}｜预计路程 ${plan.route.totalDistanceKm} km`,
     `${plan.weather.source === 'demo' ? '演示天气' : '天气'}：${plan.weather.summary}，${plan.weather.temperatureMin}–${plan.weather.temperatureMax}℃`,
     '',
   ]
@@ -45,7 +36,7 @@ export function buildExportLines(plan: PlanResult) {
       lines.push('', plan.request.days === 1 ? '今日行程' : `第 ${stop.dayIndex ?? 1} 天 · ${stop.date ?? plan.request.date}`)
     }
     lines.push(`${index + 1}. ${stop.startTime}–${stop.endTime}  ${stop.poi.name}`)
-    lines.push(`   ${stopCostLabel(stop, plan.request.partySize)}`)
+    lines.push(`   ${stop.note}｜费用估算 ¥${stop.estimatedCost}`)
   })
   lines.push('', `预算：交通 ${plan.budget.transport} / 门票 ${plan.budget.tickets} / 餐饮 ${plan.budget.food} / 预留 ${plan.budget.contingency}`)
   lines.push('说明：路线距离为估算；票价、开放时间与天气请在出发前以官方实时信息为准；未含住宿和返程交通。')
