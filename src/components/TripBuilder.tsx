@@ -2,9 +2,18 @@ import { ArrowRight, CalendarDays, MapPin, ShieldCheck, Sparkles, Users, Wallet 
 import { useState, type FormEvent } from 'react'
 import type { TripRequest, WalkingLevel } from '../domain/types'
 
+const START_OPTIONS = ['温州南站', '永嘉站'] as const
+
+function tomorrowDate(): string {
+  const date = new Date()
+  date.setDate(date.getDate() + 1)
+  const local = new Date(date.getTime() - date.getTimezoneOffset() * 60_000)
+  return local.toISOString().slice(0, 10)
+}
+
 const DEFAULT_REQUEST: TripRequest = {
   start: '温州南站',
-  date: '2026-09-19',
+  date: tomorrowDate(),
   days: 1,
   adults: 1,
   children: 1,
@@ -19,10 +28,12 @@ const DEFAULT_REQUEST: TripRequest = {
 interface TripBuilderProps {
   onSubmit: (request: TripRequest) => void | Promise<void>
   isPlanning: boolean
+  /** 上次生成行程时提交的条件，重新创建时回填，保证与生成结果一致。 */
+  initialRequest?: TripRequest
 }
 
-export function TripBuilder({ onSubmit, isPlanning }: TripBuilderProps) {
-  const [request, setRequest] = useState(DEFAULT_REQUEST)
+export function TripBuilder({ onSubmit, isPlanning, initialRequest }: TripBuilderProps) {
+  const [request, setRequest] = useState<TripRequest>(initialRequest ?? DEFAULT_REQUEST)
 
   function update<K extends keyof TripRequest>(key: K, value: TripRequest[K]) {
     setRequest((current) => ({ ...current, [key]: value }))
@@ -57,7 +68,7 @@ export function TripBuilder({ onSubmit, isPlanning }: TripBuilderProps) {
           <span className="demo-tag">评委示例已填充</span>
         </div>
 
-        <label className="field full"><span><MapPin size={15} /> 出发地</span><input list="start-suggestions" value={request.start} onChange={(event) => update('start', event.target.value)} placeholder="如：温州南站、永嘉站" /><datalist id="start-suggestions"><option value="温州南站" /><option value="永嘉站" /></datalist><small className="field-hint">建议选择永嘉交通节点；其他地点将以温州南站为起点规划。</small></label>
+        <label className="field full"><span><MapPin size={15} /> 出发地</span><select aria-label="出发地" value={request.start} onChange={(event) => update('start', event.target.value)}>{START_OPTIONS.map((option) => <option key={option} value={option}>{option}</option>)}</select><small className="field-hint">请从永嘉交通节点中选择出发地，仅支持固定选项。</small></label>
         <div className="field-grid">
           <label className="field"><span><CalendarDays size={15} /> 出行日期</span><input type="date" value={request.date} onChange={(event) => update('date', event.target.value)} /></label>
           <label className="field"><span>行程天数 · 1–5 天</span><input aria-label="行程天数" type="number" min="1" max="5" step="1" value={request.days} onChange={(event) => update('days', Number(event.target.value))} /></label>
