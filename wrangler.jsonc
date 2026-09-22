@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/wrangler",
+  "name": "nanxi-smart-travel",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2025-06-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "YONGJIA_BASE_URL": "https://api.deepseek.com",
+    "AI_MODEL": "deepseek-flash"
+  },
+  "kv_namespaces": [
+    { "binding": "WEATHER_CACHE", "id": "41f00e626bef40798bbdc28dd6a902d2" },
+    { "binding": "SHARED_TRIPS", "id": "d6030e48a0a94ab79f4136574068d452" }
+  ],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  }
+}

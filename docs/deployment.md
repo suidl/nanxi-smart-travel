@@ -42,6 +42,23 @@ npx netlify deploy --prod --build
 
 配置环境变量后需重新部署（或在 Deploys 页触发一次 retry deploy）才会对线上函数生效。
 
+## Cloudflare Workers 发布
+
+前端静态资源与 `/api/*` 接口由同一个 Worker 承载（`wrangler.jsonc` + `worker/index.ts`，Vite ≥ 6 + `@cloudflare/vite-plugin`）：
+
+```bash
+npm run build          # 产出 dist/client（静态资源）与 dist/nanxi_smart_travel（Worker）
+npx wrangler secret put YONGJIA   # API Key 以 secret 注入，只执行一次
+npx wrangler deploy
+```
+
+- 线上地址：<https://nanxi-smart-travel.suidl.workers.dev>
+- KV 绑定：`WEATHER_CACHE`（天气缓存）、`SHARED_TRIPS`（云端分享），ID 已写入 `wrangler.jsonc`；若在其他账号部署需重新执行 `npx wrangler kv namespace create <BINDING>` 并替换 ID。
+- 非密钥变量 `YONGJIA_BASE_URL` / `AI_MODEL` 直接写在 `wrangler.jsonc` 的 `vars` 中；本地开发可用 `.dev.vars`（已 gitignore）。
+- Netlify 函数保留作兼容：共享逻辑仍在 `netlify/functions/_shared`，`worker/index.ts` 直接复用各 handler 工厂（依赖注入形式），新增接口时两处同步接入。
+- CI（Cloudflare 构建）中 Build command 建议设为 `vite build`（`wrangler deploy` 会自动触发构建；`tsc -b` 的类型检查放在本地或独立测试流水线）。
+- 本地 `wrangler dev` 若日志获取 `Request.cf` 超时或天气 503，多为网络代理（fake-IP）拦截出站所致，不代表线上失败。
+
 ## 隐私边界
 
 云端分享前会删除用户自由文本备注和饮食需求，只保存生成后的必要行程结构；服务端返回不可猜测的随机 ID。

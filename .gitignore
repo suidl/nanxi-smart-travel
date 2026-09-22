@@ -7,3 +7,5 @@ test-results/
 playwright-report/
 netlify/functions/*.zip
 netlify/functions/manifest.json
+.dev.vars
+.wrangler/

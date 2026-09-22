@@ -70,34 +70,37 @@ export function createPlanHandler(dependencies: PlanDependencies) {
   }
 }
 
+/** 供各运行时（Netlify / Cloudflare Workers）复用的模型解析实现。 */
+export async function interpretWithOpenAi(request: TripRequest, config: { apiKey: string; baseURL: string; model: string }): Promise<ModelInterpretation> {
+  const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL })
+  const schema = {
+    type: 'object', additionalProperties: false,
+    properties: {
+      preferences: { type: 'array', minItems: 1, maxItems: 5, items: { type: 'string', enum: ['山水', '古村', '美食', '亲子', '文化'] } },
+      walkingLevel: { type: 'string', enum: ['low', 'medium', 'high'] },
+      dietaryNeeds: { type: 'string' },
+      summary: { type: 'string', maxLength: 80 },
+    },
+    required: ['preferences', 'walkingLevel', 'dietaryNeeds', 'summary'],
+  }
+  const response = await client.chat.completions.create({
+    model: config.model,
+    messages: [
+      {
+        role: 'system',
+        content: `你是楠溪江行程约束解析器。只提炼用户偏好、步行强度、饮食需求并写一句摘要，不生成景点、价格、路线或未经提供的事实。preferences 只能从山水、古村、美食、亲子、文化中选择；“小吃”归为美食，“少走路”归为 low。优先理解 notes 中的新需求。\n\n请严格按以下 JSON Schema 输出纯 JSON，不要输出任何额外文字或 markdown 代码块标记：\n${JSON.stringify(schema)}`,
+      },
+      { role: 'user', content: JSON.stringify(request) },
+    ],
+    max_tokens: 500,
+    response_format: { type: 'json_object' },
+  })
+  return JSON.parse(response.choices[0]?.message.content ?? '{}') as ModelInterpretation
+}
+
 const handler = createPlanHandler({
   getEnvironment: getRuntimeEnvironment,
-  interpret: async (request, config) => {
-    const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL })
-    const schema = {
-      type: 'object', additionalProperties: false,
-      properties: {
-        preferences: { type: 'array', minItems: 1, maxItems: 5, items: { type: 'string', enum: ['山水', '古村', '美食', '亲子', '文化'] } },
-        walkingLevel: { type: 'string', enum: ['low', 'medium', 'high'] },
-        dietaryNeeds: { type: 'string' },
-        summary: { type: 'string', maxLength: 80 },
-      },
-      required: ['preferences', 'walkingLevel', 'dietaryNeeds', 'summary'],
-    }
-    const response = await client.chat.completions.create({
-      model: config.model,
-      messages: [
-        {
-          role: 'system',
-          content: `你是楠溪江行程约束解析器。只提炼用户偏好、步行强度、饮食需求并写一句摘要，不生成景点、价格、路线或未经提供的事实。preferences 只能从山水、古村、美食、亲子、文化中选择；“小吃”归为美食，“少走路”归为 low。优先理解 notes 中的新需求。\n\n请严格按以下 JSON Schema 输出纯 JSON，不要输出任何额外文字或 markdown 代码块标记：\n${JSON.stringify(schema)}`,
-        },
-        { role: 'user', content: JSON.stringify(request) },
-      ],
-      max_tokens: 500,
-      response_format: { type: 'json_object' },
-    })
-    return JSON.parse(response.choices[0]?.message.content ?? '{}') as ModelInterpretation
-  },
+  interpret: interpretWithOpenAi,
 })
 
 export default handler

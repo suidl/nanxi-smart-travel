@@ -18,5 +18,5 @@
     "types": ["node", "vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["src", "tests", "vite.config.ts", "vitest.config.ts"],
-  "exclude": ["tests/e2e"]
+  "exclude": ["tests/e2e", "worker"]
 }
